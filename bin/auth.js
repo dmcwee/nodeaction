@@ -23,7 +23,20 @@ const tokenRequest = {
 };
 
 const apiConfig = {
-    uri: process.env.GRAPH_ENDPOINT + '/v1.0/users',
+    get: function(api) {
+        return process.env.GRAPH_ENDPOINT + api;
+    },
+    uri: `${process.env.GRAPH_ENDPOINT}/v1.0/users`,
+    deviceManagement: {
+        configurationPolicies: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicies`,
+        configurationPoliciesSettings: function(policyId) {
+            return `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicies/${policyId}/settings`;
+        },
+        reusableSettings: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/reusableSettings`,
+        inventorySettings: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/inventorySettings`,
+        complianceSettings: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/complianceSettings`,
+        configurationSettings: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationSettings`,
+    }
 };
 
 /**

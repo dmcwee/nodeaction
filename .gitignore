@@ -1,2 +1,6 @@
 node_modules
 .env
+reusableSettings.json
+inventorySettings.json
+configurationSettings.json
+complianceSettings.json
