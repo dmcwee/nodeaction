@@ -1,6 +1,6 @@
 {
     "description": "",
-    "name": "Testing for github action",
+    "name": "Node Action Starter Template",
     "platforms": "linux",
     "settings": [
         {

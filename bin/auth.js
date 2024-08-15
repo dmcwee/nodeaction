@@ -23,19 +23,29 @@ const tokenRequest = {
 };
 
 const apiConfig = {
-    get: function(api) {
-        return process.env.GRAPH_ENDPOINT + api;
-    },
     uri: `${process.env.GRAPH_ENDPOINT}/v1.0/users`,
     deviceManagement: {
-        configurationPolicies: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicies`,
+        configurationPolicies: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicies`,  //policies created in the tenant. Add ('id') and send a put request to update the policy
         configurationPoliciesSettings: function(policyId) {
             return `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicies/${policyId}/settings`;
         },
+        configurationPolicyTemplates: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicyTemplates`,
+        configurationPolicyTemplatesFiltered: function(templateId) {
+            return `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicyTemplates('${templateId}')`;
+        },
+        configurationPolicyTemplateSettings: function(templateId){
+            return `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicyTemplates('${templateId}')/settingTemplates?$expand=settingDefinitions`
+        },
+        configurationCategories: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationCategories?templateCategory=True`,
         reusableSettings: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/reusableSettings`,
-        inventorySettings: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/inventorySettings`,
+        inventorySettings: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/inventorySettings`, //invalid
         complianceSettings: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/complianceSettings`,
         configurationSettings: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationSettings`,
+        templates: `${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/templates`,
+    },
+    securityPolicies: {
+        list: `${process.env.GRAPH_ENDPOINT}/beta/securityPolicies`, // invalid
+        supportedTemplates: `${process.env.GRAPH_ENDPOINT}/beta/securityPolicies/supportedTemplates?implementationType=DcV2` //invalid
     }
 };
 

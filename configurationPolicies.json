@@ -1,0 +1,198 @@
+/**
+ * These are the local tenant policies and come from the call: beta/deviceManagement/configurationPolicyTemplates
+ */
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies",
+  "@odata.count": 9,
+  "value": [
+    {
+      "createdDateTime": "2024-07-17T16:30:13.4884129Z",
+      "creationSource": null,
+      "description": "",
+      "lastModifiedDateTime": "2024-07-17T16:30:13.4884129Z",
+      "name": "API Testing",
+      "platforms": "windows10",
+      "priorityMetaData": null,
+      "roleScopeTagIds": [
+        "0"
+      ],
+      "settingCount": 7,
+      "technologies": "mdm,microsoftSense",
+      "id": "046ab877-143d-498b-a295-841aa7d5c653",
+      "templateReference": {
+        "templateId": "804339ad-1553-4478-a742-138fb5807418_1",
+        "templateFamily": "endpointSecurityAntivirus",
+        "templateDisplayName": "Microsoft Defender Antivirus",
+        "templateDisplayVersion": "Version 1"
+      }
+    },
+    {
+      "createdDateTime": "2024-05-31T19:08:42.2014114Z",
+      "creationSource": null,
+      "description": "",
+      "lastModifiedDateTime": "2024-05-31T19:14:29.1443965Z",
+      "name": "Block All Removeable Devices Policy",
+      "platforms": "windows10",
+      "priorityMetaData": null,
+      "roleScopeTagIds": [
+        "0"
+      ],
+      "settingCount": 1,
+      "technologies": "mdm,microsoftSense",
+      "id": "e54cbd4a-c1a3-4dc1-a4b0-a1d0358d1c6b",
+      "templateReference": {
+        "templateId": "0f2034c6-3cd6-4ee1-bd37-f3c0693e9548_1",
+        "templateFamily": "endpointSecurityAttackSurfaceReduction",
+        "templateDisplayName": "Device Control",
+        "templateDisplayVersion": "Version 1"
+      }
+    },
+    {
+      "createdDateTime": "2024-03-22T20:10:57.3465815Z",
+      "creationSource": null,
+      "description": "",
+      "lastModifiedDateTime": "2024-03-22T20:11:24.8949972Z",
+      "name": "Dummy Exclusion Policy",
+      "platforms": "linux",
+      "priorityMetaData": null,
+      "roleScopeTagIds": [
+        "0"
+      ],
+      "settingCount": 1,
+      "technologies": "microsoftSense",
+      "id": "403b8286-176c-4302-9ac7-6427e1ef6fad",
+      "templateReference": {
+        "templateId": "8a17a1e5-3df4-4e07-9d20-3878267a79b8_1",
+        "templateFamily": "endpointSecurityAntivirus",
+        "templateDisplayName": "Microsoft Defender Antivirus Exclusions",
+        "templateDisplayVersion": "Version 1"
+      }
+    },
+    {
+      "createdDateTime": "2024-08-08T04:13:49.4283445Z",
+      "creationSource": null,
+      "description": "",
+      "lastModifiedDateTime": "2024-08-08T13:35:22.7109452Z",
+      "name": "Github Demo Action Aug 7 2024 2108",
+      "platforms": "linux",
+      "priorityMetaData": null,
+      "roleScopeTagIds": [
+        "0"
+      ],
+      "settingCount": 2,
+      "technologies": "microsoftSense",
+      "id": "7683b1f3-4b49-4d38-a6f8-12b1d24326d2",
+      "templateReference": {
+        "templateId": "4cfd164c-5e8a-4ea9-b15d-9aa71e4ffff4_1",
+        "templateFamily": "endpointSecurityAntivirus",
+        "templateDisplayName": "Microsoft Defender Antivirus",
+        "templateDisplayVersion": "Version 1"
+      }
+    },
+    {
+      "createdDateTime": "2024-07-15T18:50:08.153761Z",
+      "creationSource": null,
+      "description": "",
+      "lastModifiedDateTime": "2024-07-15T18:50:08.153761Z",
+      "name": "Minimal",
+      "platforms": "windows10",
+      "priorityMetaData": null,
+      "roleScopeTagIds": [
+        "0"
+      ],
+      "settingCount": 1,
+      "technologies": "mdm,microsoftSense",
+      "id": "b80d3497-263f-4eab-99f0-a9cd3aa27b0f",
+      "templateReference": {
+        "templateId": "804339ad-1553-4478-a742-138fb5807418_1",
+        "templateFamily": "endpointSecurityAntivirus",
+        "templateDisplayName": "Microsoft Defender Antivirus",
+        "templateDisplayVersion": "Version 1"
+      }
+    },
+    {
+      "createdDateTime": "2024-04-25T15:08:52.1938879Z",
+      "creationSource": null,
+      "description": "",
+      "lastModifiedDateTime": "2024-06-18T17:14:27.4632997Z",
+      "name": "Replication of Linux Policy",
+      "platforms": "linux",
+      "priorityMetaData": null,
+      "roleScopeTagIds": [
+        "0"
+      ],
+      "settingCount": 12,
+      "technologies": "microsoftSense",
+      "id": "0732e8d0-05c1-4aea-8993-5c45570eac05",
+      "templateReference": {
+        "templateId": "4cfd164c-5e8a-4ea9-b15d-9aa71e4ffff4_1",
+        "templateFamily": "endpointSecurityAntivirus",
+        "templateDisplayName": "Microsoft Defender Antivirus",
+        "templateDisplayVersion": "Version 1"
+      }
+    },
+    {
+      "createdDateTime": "2024-03-22T20:16:33.4669663Z",
+      "creationSource": null,
+      "description": "",
+      "lastModifiedDateTime": "2024-03-22T20:18:00.5319139Z",
+      "name": "SPortal - Linux AV Exclusion",
+      "platforms": "linux",
+      "priorityMetaData": null,
+      "roleScopeTagIds": [
+        "0"
+      ],
+      "settingCount": 1,
+      "technologies": "microsoftSense",
+      "id": "84fd033a-6077-4687-9ac9-f68aac997a07",
+      "templateReference": {
+        "templateId": "8a17a1e5-3df4-4e07-9d20-3878267a79b8_1",
+        "templateFamily": "endpointSecurityAntivirus",
+        "templateDisplayName": "Microsoft Defender Antivirus Exclusions",
+        "templateDisplayVersion": "Version 1"
+      }
+    },
+    {
+      "createdDateTime": "2024-04-03T19:45:52.7488295Z",
+      "creationSource": null,
+      "description": "",
+      "lastModifiedDateTime": "2024-04-03T19:45:52.7488295Z",
+      "name": "Tag MDE Management",
+      "platforms": "linux",
+      "priorityMetaData": null,
+      "roleScopeTagIds": [
+        "0"
+      ],
+      "settingCount": 1,
+      "technologies": "microsoftSense",
+      "id": "5d2f46d6-ed20-4775-a7e9-0a1b45e1bbb9",
+      "templateReference": {
+        "templateId": "3514388a-d4d1-4aa8-bd64-c317776008f5_1",
+        "templateFamily": "endpointSecurityEndpointDetectionAndResponse",
+        "templateDisplayName": "Endpoint detection and response",
+        "templateDisplayVersion": "Version 1"
+      }
+    },
+    {
+      "createdDateTime": "2024-04-04T16:55:29.5072121Z",
+      "creationSource": null,
+      "description": "",
+      "lastModifiedDateTime": "2024-04-04T16:55:29.5072121Z",
+      "name": "Testing lots of exclusions",
+      "platforms": "linux",
+      "priorityMetaData": null,
+      "roleScopeTagIds": [
+        "0"
+      ],
+      "settingCount": 1,
+      "technologies": "microsoftSense",
+      "id": "d872ead8-6d46-4768-a0b9-a76f3a400e9c",
+      "templateReference": {
+        "templateId": "8a17a1e5-3df4-4e07-9d20-3878267a79b8_1",
+        "templateFamily": "endpointSecurityAntivirus",
+        "templateDisplayName": "Microsoft Defender Antivirus Exclusions",
+        "templateDisplayVersion": "Version 1"
+      }
+    }
+  ]
+}

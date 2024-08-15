@@ -2,6 +2,7 @@
 
 // read in env settings
 require('dotenv').config();
+const fs = require('fs/promises');
 
 const yargs = require('yargs');
 const fetch = require('./fetch');
@@ -12,10 +13,26 @@ const file = require('./file')
 const options = yargs
     .usage('Usage: --op <operation_name> --pid <policy_id>')
     .option('op', { alias: 'operation', describe: 'operation name', type: 'string', demandOption: true })
+    .option('file', {alias: 'f', describe: 'input or output file', type: 'string', demandOption: false})
     .option('id', { alias: 'policyid', describe: 'policy id', type: 'string', demandOption: false })
-    .option('o', {alias: 'output', describe: 'output file name', type: 'string', demandOption: false, default: null})
-    .option('name')
+    .option('uri', {alias: 'graphUri', describe: 'Graph Uri to Call', type: 'string', demandOption: false, default: null})
+    .option('n', {alias: 'name', describe: 'policy name', type: 'string', demandOption: false, default: null})
     .argv;
+
+async function list(uri, accessToken) {
+    try {
+        const result = await fetch.list(uri, accessToken);
+        if(options.file != null) {
+            await file.writeFile(result, options.file);
+        }
+        else {
+            console.log(JSON.stringify(result, undefined, 2));
+        }
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
 
 async function main() {
     console.log(`You have selected: ${options.op}`);
@@ -23,63 +40,72 @@ async function main() {
     // here we get an access token
     const authResponse = await auth.getToken(auth.tokenRequest);
 
-    switch (yargs.argv['op']) {
+    switch (options.op) {
         case 'getUsers':
+            list(auth.apiConfig.uri, authResponse.accessToken);
+            break;
+        case 'fileTesting':
             try {
-                // call the web API with the access token
-                const users = await fetch.list(auth.apiConfig.uri, authResponse.accessToken);
-                if(options.o != null) {
-                    file.writeFile(users, options.o)
+                const filePath = options.file;
+                const files = await fs.readdir(filePath);
+                for(let file of files){
+                    console.log(`Opening file ${filePath}/${file}`);
+                    const fileContent = await fs.readFile(`${filePath}/${file}`);
+                    console.log(`File Content: ${fileContent}`);
                 }
-                else {
-                    // display result
-                    console.log(users);
-                }
-            } catch (error) {
+            }
+            catch (error) {
                 console.log(error);
             }
             break;
-        case 'newConfigurationPolicies':
-                try {
-                    const p = policy.newConfigurationPolicy(options.name);
-                    const result = await fetch.create(auth.apiConfig.deviceManagement.configurationPolicies, authResponse.accessToken, p);
-                    console.log(result);
-                }
-                catch(error) {
-                    console.log(error);
-                }
-                break;
+        case 'list':
+            list(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken);
+            break;
+        case 'newPolicy':
+            try {
+                const policy = JSON.parse(await file.readFile(options.file));
+                policy['name'] = options.name;
+
+                const result = await fetch.create(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, policy);
+                console.log(`Result: ${JSON.stringify(result, undefined, 2)}`);
+            }
+            catch(error) {
+                console.log(error);
+            }
+            break;
+        case 'updatePolicy':
+            try {
+                const policy = JSON.parse(await file.readFile(options.file));
+                policy['name'] = options.name;
+
+                const result = await fetch.update(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, policy);
+                console.log(`Result: ${JSON.stringify(result, undefined, 2)}`);
+            }
+            catch(error) {
+                console.log(error);
+            }
+            break;
         case 'configurationPoliciesSettings':
-                    try {
-                        const settings = await fetch.list(auth.apiConfig.deviceManagement.configurationPoliciesSettings(options.id), authResponse.accessToken);
-                        if(options.o != null) {
-                            file.writeFile(settings, options.o)
-                        }
-                        else {
-                            console.log(JSON.stringify(settings, undefined, 2));
-                        }
-                    }
-                    catch(error) {
-                        console.log(error);
-                    }
-                    break;
+            list(auth.apiConfig.deviceManagement.configurationPoliciesSettings(options.id), authResponse.accessToken);
+            break;
+        case 'configurationPolicyTemplateSettings':
+            list(auth.apiConfig.deviceManagement.configurationPolicyTemplateSettings(options.id), authResponse.accessToken);
+            break;
+        case 'configurationPolicyTemplatesFiltered':
+            list(auth.apiConfig.deviceManagement.configurationPolicyTemplatesFiltered(options.id), authResponse.accessToken);
+            break;
         case 'configurationPolicies':
         case 'reusableSettings':
         case 'inventorySettings':
         case 'complianceSettings':
         case 'configurationSettings':
-            try {
-                const policies = await fetch.list(auth.apiConfig.deviceManagement[options.op], authResponse.accessToken);
-                if(options.o != null) {
-                    file.writeFile(policies, options.o)
-                }
-                else {
-                    console.log(policies);
-                }
-            }
-            catch(error) {
-                console.log(error);
-            }
+        case 'templates':
+        case 'configurationPolicyTemplates':
+        case 'configurationCategories':
+            list(auth.apiConfig.deviceManagement[options.op], authResponse.accessToken);
+            break;
+        case 'securityPolicies':
+            list(auth.apiConfig.securityPolicies.supportedTemplates, authResponse.accessToken);
             break;
         default:
             console.log('Select a Graph operation first');

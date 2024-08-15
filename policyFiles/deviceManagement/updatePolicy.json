@@ -1,0 +1,47 @@
+{
+    "description": "",
+    "name": "Node Action Starter Template",
+    "platforms": "linux",
+    "settings": [
+        {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+        "settingInstance": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+            "choiceSettingValue": {
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                "children": [],
+                "settingValueTemplateReference": {
+                    "settingValueTemplateId": "f43ea7cb-baa1-4c05-87a7-b11e0c94becc"
+                },
+                "value": "linux_mdatp_managed_cloudservice_enabled_true"
+            },
+            "settingDefinitionId": "linux_mdatp_managed_cloudservice_enabled",
+            "settingInstanceTemplateReference": {
+                "settingInstanceTemplateId": "ad8554ce-16d5-44a5-9686-d286844755b0"
+                }
+            }
+        },
+        {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+            "settingInstance": {
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                "choiceSettingValue": {
+                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                    "children": [],
+                    "settingValueTemplateReference": {
+                        "settingValueTemplateId": "56268401-a42d-4340-863b-cec0a2d2f967"
+                    },
+                    "value": "linux_mdatp_managed_antivirusengine_behaviormonitoring_1"
+                },
+                "settingDefinitionId": "linux_mdatp_managed_antivirusengine_behaviormonitoring",
+                "settingInstanceTemplateReference": {
+                    "settingInstanceTemplateId": "5a28a1d5-cb9f-4e49-8a65-fbe480f848b1"
+                    }
+                }
+            }
+    ],
+    "technologies": "microsoftSense",
+    "templateReference": {
+        "templateId": "4cfd164c-5e8a-4ea9-b15d-9aa71e4ffff4_1"
+    }
+}

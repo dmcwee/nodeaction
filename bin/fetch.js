@@ -17,16 +17,14 @@ async function callApi(endpoint, accessToken, action, body) {
     switch(action) {
         case 'get':
             return axios.get(endpoint, options);
-        break;
         case 'post':
             return axios.post(endpoint, body, options);
-        break;
         case 'delete':
             return axios.delete(endpoint, body, options);
-        break;
+        case 'put':
+            return axios.put(endpoint, body, options)
         default:
             throw "Invalid graphApi Action"
-        break;
     }
 }
 
@@ -73,9 +71,21 @@ async function list(endpoint, accessToken) {
     }
 };
 
+async function update(endpoint, accessToken, body){
+    try {
+        const response = await callApi(endpoint, accessToken, 'put', body);
+        return response.data;
+    }
+    catch(error) {
+        console.log(error);
+        return error;
+    }
+}
+
 module.exports = {
     list: list,
     create: create,
     get: get,
-    del: del
+    del: del,
+    update: update
 };
