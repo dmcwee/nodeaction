@@ -7,13 +7,14 @@ const fs = require('fs/promises');
 const yargs = require('yargs');
 const fetch = require('./fetch');
 const auth = require('./auth');
-const policy = require('./configPolicy');
+//const policy = require('./configPolicy');
 const file = require('./file')
+const exporter = require('./export')
 
 const options = yargs
     .usage('Usage: --op <operation_name> --pid <policy_id>')
     .option('op', { alias: 'operation', describe: 'operation name', type: 'string', demandOption: true })
-    .option('file', {alias: 'f', describe: 'input or output file', type: 'string', demandOption: false})
+    .option('f', {alias: 'file', describe: 'file or filepath', type: 'string', demandOption: false})
     .option('id', { alias: 'policyid', describe: 'policy id', type: 'string', demandOption: false })
     .option('uri', {alias: 'graphUri', describe: 'Graph Uri to Call', type: 'string', demandOption: false, default: null})
     .option('n', {alias: 'name', describe: 'policy name', type: 'string', demandOption: false, default: null})
@@ -21,9 +22,11 @@ const options = yargs
 
 async function list(uri, accessToken) {
     try {
+        console.debug(`Options: ${JSON.stringify(options)}`);
+
         const result = await fetch.list(uri, accessToken);
-        if(options.file != null) {
-            await file.writeFile(result, options.file);
+        if(options.f) {
+            await file.writeFile(result, options.f);
         }
         else {
             console.log(JSON.stringify(result, undefined, 2));
@@ -46,7 +49,7 @@ async function main() {
             break;
         case 'fileTesting':
             try {
-                const filePath = options.file;
+                const filePath = options.f;
                 const files = await fs.readdir(filePath);
                 for(let file of files){
                     console.log(`Opening file ${filePath}/${file}`);
@@ -55,34 +58,53 @@ async function main() {
                 }
             }
             catch (error) {
-                console.log(error);
+                console.error(error);
             }
             break;
         case 'list':
             list(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken);
             break;
+        case 'export':
+            try {
+                if(options.id){
+                    const filePath = `${options.f}/policy_${options.id}.json`;
+                    const policy = await exporter.exportConfigurationPolicy(options.id, authResponse.accessToken);
+                    file.writeFile(policy, filePath);
+                }
+                else {
+                    const policies = await exporter.exportConfigurationPolicies(authResponse.accessToken);
+                    policies.forEach((policy, key) => {
+                        var exportFile = `${options.f}/policy_${key}.json`;
+                        file.writeFile(policy, exportFile)
+                    });
+                }
+            }
+            catch(error) {
+                console.error(error);
+            }
+            break;
         case 'newPolicy':
             try {
-                const policy = JSON.parse(await file.readFile(options.file));
+                const policy = JSON.parse(await file.readFile(options.f));
                 policy['name'] = options.name;
 
                 const result = await fetch.create(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, policy);
                 console.log(`Result: ${JSON.stringify(result, undefined, 2)}`);
             }
             catch(error) {
-                console.log(error);
+                console.error(error);
             }
             break;
         case 'updatePolicy':
             try {
-                const policy = JSON.parse(await file.readFile(options.file));
+                const policy = JSON.parse(await file.readFile(options.f));
                 policy['name'] = options.name;
 
                 const result = await fetch.update(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, policy);
                 console.log(`Result: ${JSON.stringify(result, undefined, 2)}`);
             }
             catch(error) {
-                console.log(error);
+                console.error(error);
             }
             break;
         case 'configurationPoliciesSettings':
