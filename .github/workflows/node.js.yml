@@ -35,3 +35,5 @@ jobs:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
           TENANT_ID: ${{ secrets.TENANT_ID }}
+          AAD_ENDPOINT: ${{ vars.AAD_ENDPOINT }}
+          GRAPH_ENDPOINT: ${{ vars.GRAPH_ENDPOINT }}
