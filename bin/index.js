@@ -43,6 +43,9 @@ async function main() {
     const authResponse = await auth.getToken(auth.tokenRequest);
 
     switch (options.op) {
+        case 'test':
+                console.log("Test Run");
+            break;
         case 'fileTesting':
             file.test(options.f);
             break;
