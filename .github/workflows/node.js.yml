@@ -31,3 +31,7 @@ jobs:
       - name: Run NodeAction
         id: run
         run: node . --op test 
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          TENANT_ID: ${{ secrets.TENANT_ID }}
