@@ -2,7 +2,6 @@
 
 // read in env settings
 require('dotenv').config();
-const fs = require('fs/promises');
 
 const yargs = require('yargs');
 const fetch = require('./fetch');
@@ -12,11 +11,11 @@ const file = require('./file')
 const exporter = require('./export')
 
 const options = yargs
-    .usage('Usage: --op <operation_name> --pid <policy_id>')
+    .usage('Usage: --op [import, export] --id <policy_guid> ')
     .option('op', { alias: 'operation', describe: 'operation name', type: 'string', demandOption: true })
     .option('f', {alias: 'file', describe: 'file or filepath', type: 'string', demandOption: false})
     .option('id', { alias: 'policyid', describe: 'policy id', type: 'string', demandOption: false })
-    .option('uri', {alias: 'graphUri', describe: 'Graph Uri to Call', type: 'string', demandOption: false, default: null})
+    .option('uri', {alias: 'graphUri', describe: 'Graph Uri to Call', type: 'string', demandOption: false, default: "/beta/deviceManagement/configurationPolicies"})
     .option('n', {alias: 'name', describe: 'policy name', type: 'string', demandOption: false, default: null})
     .argv;
 
@@ -44,22 +43,8 @@ async function main() {
     const authResponse = await auth.getToken(auth.tokenRequest);
 
     switch (options.op) {
-        case 'getUsers':
-            list(auth.apiConfig.uri, authResponse.accessToken);
-            break;
         case 'fileTesting':
-            try {
-                const filePath = options.f;
-                const files = await fs.readdir(filePath);
-                for(let file of files){
-                    console.log(`Opening file ${filePath}/${file}`);
-                    const fileContent = await fs.readFile(`${filePath}/${file}`);
-                    console.log(`File Content: ${fileContent}`);
-                }
-            }
-            catch (error) {
-                console.error(error);
-            }
+            file.test(options.f);
             break;
         case 'list':
             list(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken);
@@ -77,6 +62,27 @@ async function main() {
                         var exportFile = `${options.f}/policy_${key}.json`;
                         file.writeFile(policy, exportFile)
                     });
+                }
+            }
+            catch(error) {
+                console.error(error);
+            }
+            break;
+        case 'import':
+            try {
+                const isFolder = file.isFolder(options.f);
+                if(isFolder){
+                    const files = await fs.readdir(path);
+                    for(let file of files){
+                        const fileContent = await fs.readFile(`${path}/${file}`);
+                        const result = await fetch.create(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, fileContent);
+                        await file.writeFile(result, `${path}/${file}.result`);
+                    }
+                }
+                else {
+                    const content = JSON.parse(await file.readFile(options.f));
+                    const result = await fetch.create(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, content);
+                    await file.writeFile(result, `${options.f}.result`);
                 }
             }
             catch(error) {
