@@ -14,8 +14,8 @@ This project provides a way to interact with the Device Configuration v2 endpoin
 1. Create an application regisration in your Entra ID Tenant
 1. Generate an application secret
 1. Grant the application Microsoft Graph permissions:
-  1. `DeviceManagementConfiguration.Read.All` if you only want to export from your tenant
-  1. `DeviceManagementConfiguration.ReadWrite.All` if you want to export and create/import device configuration policies
+    1. `DeviceManagementConfiguration.Read.All` if you only want to export from your tenant
+    1. `DeviceManagementConfiguration.ReadWrite.All` if you want to export and create/import device configuration policies
 1. Copy `.env.template` to `.env` and update the **Tenant ID**, **Client ID**, and **Client Secret** values to match those of your application registration.
 1. Install dependencies
   1. Run `npm ci`
