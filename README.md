@@ -29,16 +29,18 @@ There are two primary actions for NodeActions: **import** and **export**.
 ### Export
 
 **Command Line:** `node . --op export -f ./exports` will export all policies and their associated settings.
+
 **Command Line:** `node . --op export -f ./exports --id POLICY_GUID` will export only the policy with the matching GUID
 
 ### Import
 
 **Command Line:** `node . --op import -f ./policies` will import all policies in the policy folder.
+
 **Command Line:** `node . --op import -f ./policies/deviceControlPolicy.json` will only import the policy from the `deviceControlPolicy.json` file.
 
 ### Usage
 
-**Usage:** --op [import, export] --id <policy_id>
+**Usage:** --op [import, export] -f <file/folder path>
 
 **Options:**
       --help             Show help
