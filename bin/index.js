@@ -6,26 +6,25 @@ require('dotenv').config();
 const yargs = require('yargs');
 const fetch = require('./fetch');
 const auth = require('./auth');
-//const policy = require('./configPolicy');
 const file = require('./file')
 const exporter = require('./export')
 
 const options = yargs
-    .usage('Usage: --op [import, export] --id <policy_guid> ')
+    .usage('Usage: --op [import, export] -f <file or folder path> ')
     .option('op', { alias: 'operation', describe: 'operation name', type: 'string', demandOption: true })
-    .option('f', {alias: 'file', describe: 'file or filepath', type: 'string', demandOption: false})
+    .option('p', {alias: 'path', describe: 'file or filepath', type: 'string', demandOption: false})
     .option('id', { alias: 'policyid', describe: 'policy id', type: 'string', demandOption: false })
-    .option('uri', {alias: 'graphUri', describe: 'Graph Uri to Call', type: 'string', demandOption: false, default: "/beta/deviceManagement/configurationPolicies"})
+    .option('uri', {alias: 'graphUri', describe: 'Graph Uri to Call', type: 'string', demandOption: false, default: "beta/deviceManagement/configurationPolicies"})
     .option('n', {alias: 'name', describe: 'policy name', type: 'string', demandOption: false, default: null})
     .argv;
 
 async function list(uri, accessToken) {
     try {
-        console.debug(`Options: ${JSON.stringify(options)}`);
+        //console.debug(`DEBUG Options: ${JSON.stringify(options)}`);
 
         const result = await fetch.list(uri, accessToken);
-        if(options.f) {
-            await file.writeFile(result, options.f);
+        if(options.p) {
+            await file.writeFile(result, options.p);
         }
         else {
             console.log(JSON.stringify(result, undefined, 2));
@@ -44,10 +43,12 @@ async function main() {
 
     switch (options.op) {
         case 'test':
-                console.log("Test Run");
+            console.log("Test Run");
+            const policies = list(`${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicies`, authResponse.accessToken);
+            console.log(`Received ${policies.value.count} policies from the tenant.`);
             break;
         case 'fileTesting':
-            file.test(options.f);
+            file.test(options.p);
             break;
         case 'list':
             list(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken);
@@ -55,14 +56,14 @@ async function main() {
         case 'export':
             try {
                 if(options.id){
-                    const filePath = `${options.f}/policy_${options.id}.json`;
+                    const filePath = `${options.p}/policy_${options.id}.json`;
                     const policy = await exporter.exportConfigurationPolicy(options.id, authResponse.accessToken);
                     file.writeFile(policy, filePath);
                 }
                 else {
                     const policies = await exporter.exportConfigurationPolicies(authResponse.accessToken);
                     policies.forEach((policy, key) => {
-                        var exportFile = `${options.f}/policy_${key}.json`;
+                        var exportFile = `${options.p}/policy_${key}.json`;
                         file.writeFile(policy, exportFile)
                     });
                 }
@@ -73,7 +74,7 @@ async function main() {
             break;
         case 'import':
             try {
-                const isFolder = file.isFolder(options.f);
+                const isFolder = file.isFolder(options.p);
                 if(isFolder){
                     const files = await fs.readdir(path);
                     for(let file of files){
@@ -83,18 +84,18 @@ async function main() {
                     }
                 }
                 else {
-                    const content = JSON.parse(await file.readFile(options.f));
+                    const content = JSON.parse(await file.readFile(options.p));
                     const result = await fetch.create(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, content);
-                    await file.writeFile(result, `${options.f}.result`);
+                    await file.writeFile(result, `${options.p}.result`);
                 }
             }
             catch(error) {
                 console.error(error);
             }
             break;
-        case 'newPolicy':
+        case 'new':
             try {
-                const policy = JSON.parse(await file.readFile(options.f));
+                const policy = JSON.parse(await file.readFile(options.p));
                 policy['name'] = options.name;
 
                 const result = await fetch.create(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, policy);
@@ -104,9 +105,9 @@ async function main() {
                 console.error(error);
             }
             break;
-        case 'updatePolicy':
+        case 'update':
             try {
-                const policy = JSON.parse(await file.readFile(options.f));
+                const policy = JSON.parse(await file.readFile(options.p));
                 policy['name'] = options.name;
 
                 const result = await fetch.update(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, policy);

@@ -28,25 +28,20 @@ There are two primary actions for NodeActions: **import** and **export**.
 
 ### Export
 
-**Command Line:** `node . --op export -f ./exports` will export all policies and their associated settings.
+The export command will extract all Device Configuration Policies and write them to the specified folder. Each policy found will generate a new file with the format `policy_{policy's GUID}.json`. The format of these exported policies are aligned with the format necessary to import the policy into another tenant.
 
-**Command Line:** `node . --op export -f ./exports --id POLICY_GUID` will export only the policy with the matching GUID
+```shell
+> node . --op export -p ./exports
+
+> node . --op export -p ./exports --id POLICY_GUID
+```
 
 ### Import
 
-**Command Line:** `node . --op import -f ./policies` will import all policies in the policy folder.
+The import command, if provided a folder path, will iterate through the child files and attempt to import them into the tenant. If the import command is provided the path to a single file then only that policy file will be imported. 
 
-**Command Line:** `node . --op import -f ./policies/deviceControlPolicy.json` will only import the policy from the `deviceControlPolicy.json` file.
+```shell
+> node . --op import -p ./policies
 
-### Usage
-
-**Usage:** --op [import, export] -f <file/folder path>
-
-**Options:**
-      --help             Show help
-      --version          Show version number
-      --op, --operation  operation name
-  -f, --file             file or filepath
-      --id, --policyid   policy id
-      --uri, --graphUri  Graph Uri to Call
-  -n, --name             policy name
+> node . --op import -p ./policies/deviceControlPolicy.json
+```
