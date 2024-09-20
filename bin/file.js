@@ -11,8 +11,13 @@ async function readFile(filename) {
 }
 
 async function isFolder(path) {
-    const stat = await fs.stat(filename);
+    const stat = await fs.stat(path);
     return stat.isDirectory();
+}
+
+async function readDir(path) {
+    const data = await fs.readdir(path);
+    return data;
 }
 
 async function test(path) {
@@ -33,5 +38,6 @@ module.exports = {
     writeFile,
     readFile,
     isFolder,
+    readDir,
     test
 }

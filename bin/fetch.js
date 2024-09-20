@@ -34,7 +34,7 @@ async function create(endpoint, accessToken, body) {
         return response.data
     }
     catch (error) {
-        console.log(error);
+        //console.log(error);
         return error;
     }
 };
@@ -45,7 +45,7 @@ async function get(endpoint, accessToken) {
         return response.data
     }
     catch (error) {
-        console.log(error);
+        //console.log(error);
         return error;
     } 
 };
@@ -56,7 +56,7 @@ async function del(endpoint, accessToken) {
         return response.data
     }
     catch (error) {
-        console.log(error);
+        //console.log(error);
         return error;
     } 
 }
@@ -66,7 +66,7 @@ async function list(endpoint, accessToken) {
         const response = await callApi(endpoint, accessToken, 'get', null);
         return response.data;
     } catch (error) {
-        console.log(error)
+        //console.log(error)
         return error;
     }
 };
@@ -77,7 +77,7 @@ async function update(endpoint, accessToken, body){
         return response.data;
     }
     catch(error) {
-        console.log(error);
+        //console.log(error);
         return error;
     }
 }

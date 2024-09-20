@@ -74,13 +74,14 @@ async function main() {
             break;
         case 'import':
             try {
-                const isFolder = file.isFolder(options.p);
+                const isFolder = await file.isFolder(options.p);
                 if(isFolder){
-                    const files = await fs.readdir(path);
-                    for(let file of files){
-                        const fileContent = await fs.readFile(`${path}/${file}`);
+                    const files = await file.readDir(options.p);
+                    for(let policyfile of files){
+                        const fileContent = JSON.parse(await file.readFile(`${options.p}/${policyfile}`));
+                        //console.log(`File Content: ${fileContent}`);
                         const result = await fetch.create(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, fileContent);
-                        await file.writeFile(result, `${path}/${file}.result`);
+                        await file.writeFile(result, `${options.p}/${policyfile}.result`);
                     }
                 }
                 else {
@@ -90,7 +91,7 @@ async function main() {
                 }
             }
             catch(error) {
-                console.error(error);
+                //console.error(error);
             }
             break;
         case 'new':
