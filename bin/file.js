@@ -1,8 +1,8 @@
 const fs = require('fs/promises');
 
 async function writeFile(setting, filename) {
-    await fs.writeFile(filename, JSON.stringify(setting, undefined, 2));
-    console.log(`wrote to file ${filename}`);
+    await fs.writeFile(filename, JSON.stringify(setting, undefined, 2), {'flag': 'w+'});
+    //console.log(`wrote to file ${filename}`);
 }
 
 async function readFile(filename) {

@@ -1,10 +1,7 @@
 const fetch = require('./fetch');
 
-async function convertToConfigurationPolicy(policy, settings) {
-    console.debug(`settings length: ${settings.value.length}`);
-
-    let settingsArray = await convertToPolicySettings(settings);
-    console.log(`settingsArray length: ${settingsArray.length}`);
+function convertToConfigurationPolicy(policy, settings) {
+    let settingsArray = convertToPolicySettings(settings);
 
     return {
         name: policy.name,
@@ -19,7 +16,18 @@ async function convertToConfigurationPolicy(policy, settings) {
     }
 }
 
-async function createChoiceSettingValue(settings) {
+function createSettingValueTemplateReference(settingValueTemplateReference) {
+    if(settingValueTemplateReference !== null) {
+        return {
+            settingValueTemplateId: settingValueTemplateReference.settingValueTemplateId
+        };
+    }
+    else {
+        return null;
+    }
+}
+
+function createChoiceSettingValue(settings) {
     //console.log(`settings: ${JSON.stringify(settings)}`);
     return {
         "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
@@ -28,9 +36,7 @@ async function createChoiceSettingValue(settings) {
             "choiceSettingValue": {
                 "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
                 children: settings.settingInstance.choiceSettingValue.children,
-                settingValueTemplateReference: {
-                    settingValueTemplateId: settings.settingInstance.choiceSettingValue.settingValueTemplateReference.settingValueTemplateId
-                },
+                settingValueTemplateReference: createSettingValueTemplateReference(settings.settingInstance.choiceSettingValue.settingValueTemplateReference),
                 value: settings.settingInstance.choiceSettingValue.value
             },
             "settingDefinitionId": settings.settingInstance.settingDefinitionId,
@@ -39,25 +45,47 @@ async function createChoiceSettingValue(settings) {
     };
 }
 
-async function convertToPolicySettings(settings) {
+function createSimpleSettingInstance(settings) {
+    // console.log(`simple settings: ${JSON.stringify(settings)}`);
+    return {
+        "id": settings.id,
+        "settingInstance": settings.settingInstance
+    };
+}
+
+function convertToPolicySettings(settings) {
     policySettingsList = [];
     for(let setting of settings.value){
         if(setting.settingInstance["@odata.type"] === "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance") {
-            policySettingsList.push(await createChoiceSettingValue(setting));
+            policySettingsList.push(createChoiceSettingValue(setting));
+        }
+        else if(setting.settingInstance["@odata.type"] === "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance" ||
+            setting.settingInstance["@odata.type"] === "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance" ||
+            setting.settingInstance["@odata.type"] === "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionInstance"
+        ) {
+            policySettingsList.push(createSimpleSettingInstance(setting));
         }
         else {
             policySettingsList.push(setting.settingInstance);
         }
     }
-    console.log(`returning array with length ${policySettingsList.length}`);
+    //console.log(`returning array with length ${policySettingsList.length}`);
     return policySettingsList;
+}
+
+function exportRawConfigPolicy(policy, settings, error) {
+    return {
+        rawPolicy: policy,
+        rawSettings: settings,
+        exception: error
+    };
 }
 
 async function exportConfigurationPolicy(policyId, token) {
     var policy = await fetch.get(`${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicies/${policyId}`, token);
     var settings = await fetch.get(`${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicies/${policyId}/settings`, token);
 
-    return await convertToConfigurationPolicy(policy, settings);
+    return convertToConfigurationPolicy(policy, settings);
 }
 
 async function exportConfigurationPolicies(token) {
@@ -66,7 +94,13 @@ async function exportConfigurationPolicies(token) {
     var policyList = await fetch.get(`${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicies`, token);
     for(let policy of policyList.value){
         var setting = await fetch.get(`${process.env.GRAPH_ENDPOINT}/beta/deviceManagement/configurationPolicies/${policy.id}/settings`, token);
-        policies.set(policy.id, await convertToConfigurationPolicy(policy, setting));
+        try {
+            policies.set(policy.id, convertToConfigurationPolicy(policy, setting));
+        }
+        catch(error) {
+            console.error(`Ran into an issue exporting policy ${policy.id}. Adding raw export. Error: ${error}`);
+            policies.set(policy.id, exportRawConfigPolicy(policy, setting, error));
+        }
     }
     return policies;
 }

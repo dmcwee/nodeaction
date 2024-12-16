@@ -58,12 +58,14 @@ async function main() {
                 if(options.id){
                     const filePath = `${options.p}/policy_${options.id}.json`;
                     const policy = await exporter.exportConfigurationPolicy(options.id, authResponse.accessToken);
+                    console.log(`ExportFile: ${filePath}`);
                     file.writeFile(policy, filePath);
                 }
                 else {
                     const policies = await exporter.exportConfigurationPolicies(authResponse.accessToken);
                     policies.forEach((policy, key) => {
                         var exportFile = `${options.p}/policy_${key}.json`;
+                        console.log(`ExportFile: ${exportFile}`);
                         file.writeFile(policy, exportFile)
                     });
                 }
@@ -80,12 +82,22 @@ async function main() {
                     for(let policyfile of files){
                         const fileContent = JSON.parse(await file.readFile(`${options.p}/${policyfile}`));
                         //console.log(`File Content: ${fileContent}`);
+
+                        if(options.name && options.name !== "") {
+                            console.log(`Adding Prefix '${options.name}-' to policy name ${fileContent['name']}`)
+                            fileContent['name'] = `${options.name}-${fileContent['name']}`;
+                        }
+                        
                         const result = await fetch.create(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, fileContent);
                         await file.writeFile(result, `${options.p}/${policyfile}.result`);
                     }
                 }
                 else {
                     const content = JSON.parse(await file.readFile(options.p));
+                    if(options.name && options.name !== "") {
+                        console.log(`Adding Prefix '${options.name}-' to policy name ${content['name']}`)
+                        content['name'] = `${options.name}-${content['name']}`;
+                    }
                     const result = await fetch.create(`${process.env.GRAPH_ENDPOINT}/${options.uri}`, authResponse.accessToken, content);
                     await file.writeFile(result, `${options.p}.result`);
                 }

@@ -1,0 +1,122 @@
+{
+  "name": "Linux Baseline AV",
+  "description": "",
+  "settings": [
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "children": [],
+          "settingValueTemplateReference": {
+            "settingValueTemplateId": "f43ea7cb-baa1-4c05-87a7-b11e0c94becc"
+          },
+          "value": "linux_mdatp_managed_cloudservice_enabled_true"
+        },
+        "settingDefinitionId": "linux_mdatp_managed_cloudservice_enabled",
+        "settingInstanceTemplateReference": {
+          "settingInstanceTemplateId": "ad8554ce-16d5-44a5-9686-d286844755b0"
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "children": [],
+          "settingValueTemplateReference": {
+            "settingValueTemplateId": "e0d01c97-88a2-4c0b-acf0-4e22334012e4"
+          },
+          "value": "linux_mdatp_managed_cloudservice_automaticsamplesubmissionconsent_safe"
+        },
+        "settingDefinitionId": "linux_mdatp_managed_cloudservice_automaticsamplesubmissionconsent",
+        "settingInstanceTemplateReference": {
+          "settingInstanceTemplateId": "53041276-320f-4218-8ad6-c722da38c3b8"
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "children": [],
+          "settingValueTemplateReference": {
+            "settingValueTemplateId": "695c7907-d2e1-4950-8cb2-e3607f0d3f77"
+          },
+          "value": "linux_mdatp_managed_cloudservice_automaticdefinitionupdateenabled_true"
+        },
+        "settingDefinitionId": "linux_mdatp_managed_cloudservice_automaticdefinitionupdateenabled",
+        "settingInstanceTemplateReference": {
+          "settingInstanceTemplateId": "5a10dd94-e9ea-439c-8d2d-daf2a5af942f"
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "children": [],
+          "settingValueTemplateReference": {
+            "settingValueTemplateId": "c467c7e3-fc63-421a-89fa-311efdf99c11"
+          },
+          "value": "linux_mdatp_managed_cloudservice_cloudblocklevel_moderate"
+        },
+        "settingDefinitionId": "linux_mdatp_managed_cloudservice_cloudblocklevel",
+        "settingInstanceTemplateReference": {
+          "settingInstanceTemplateId": "03ade319-3e8a-4cfc-af8f-962b247c948c"
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "children": [],
+          "settingValueTemplateReference": {
+            "settingValueTemplateId": "56268401-a42d-4340-863b-cec0a2d2f967"
+          },
+          "value": "linux_mdatp_managed_antivirusengine_behaviormonitoring_1"
+        },
+        "settingDefinitionId": "linux_mdatp_managed_antivirusengine_behaviormonitoring",
+        "settingInstanceTemplateReference": {
+          "settingInstanceTemplateId": "5a28a1d5-cb9f-4e49-8a65-fbe480f848b1"
+        }
+      }
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+      "settingInstance": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+        "choiceSettingValue": {
+          "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+          "children": [],
+          "settingValueTemplateReference": {
+            "settingValueTemplateId": "82914380-18f6-4c77-9ffd-9758a48bd0a7"
+          },
+          "value": "linux_mdatp_managed_antivirusengine_enforcementlevel_0"
+        },
+        "settingDefinitionId": "linux_mdatp_managed_antivirusengine_enforcementlevel",
+        "settingInstanceTemplateReference": {
+          "settingInstanceTemplateId": "2c5e7db8-5f1f-4e80-91c4-25cdc0841410"
+        }
+      }
+    }
+  ],
+  "roleScopeTagIds": [
+    "0"
+  ],
+  "platforms": "linux",
+  "technologies": "microsoftSense",
+  "templateReference": {
+    "templateId": "4cfd164c-5e8a-4ea9-b15d-9aa71e4ffff4_1"
+  }
+}
