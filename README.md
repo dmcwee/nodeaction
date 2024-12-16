@@ -45,3 +45,7 @@ The import command, if provided a folder path, will iterate through the child fi
 
 > node . --op import -p ./policies/deviceControlPolicy.json
 ```
+
+#### Prefix Imported Policies
+
+The import command now accepts an additional parameter `-n` or `--name` which will then be added as a prefix to the policy name from the import json file.
