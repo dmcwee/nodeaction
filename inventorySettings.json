@@ -1,0 +1,39 @@
+{
+  "message": "Request failed with status code 403",
+  "name": "AxiosError",
+  "stack": "AxiosError: Request failed with status code 403\n    at settle (/mnt/c/Users/dmcwee/source/nodeaction/node_modules/axios/dist/node/axios.cjs:1983:12)\n    at Unzip.handleStreamEnd (/mnt/c/Users/dmcwee/source/nodeaction/node_modules/axios/dist/node/axios.cjs:3085:11)\n    at Unzip.emit (node:events:531:35)\n    at endReadableNT (node:internal/streams/readable:1696:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)\n    at Axios.request (/mnt/c/Users/dmcwee/source/nodeaction/node_modules/axios/dist/node/axios.cjs:4224:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Object.list (/mnt/c/Users/dmcwee/source/nodeaction/bin/fetch.js:68:26)\n    at async main (/mnt/c/Users/dmcwee/source/nodeaction/bin/index.js:72:34)",
+  "config": {
+    "transitional": {
+      "silentJSONParsing": true,
+      "forcedJSONParsing": true,
+      "clarifyTimeoutError": false
+    },
+    "adapter": [
+      "xhr",
+      "http",
+      "fetch"
+    ],
+    "transformRequest": [
+      null
+    ],
+    "transformResponse": [
+      null
+    ],
+    "timeout": 0,
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+    "maxContentLength": -1,
+    "maxBodyLength": -1,
+    "env": {},
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6ImpHSHlZV3k1T0VvZnFfb2t4dU03NzVya184a09neVZkREVTeHU0SlF1cU0iLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1HTHFqOThWTkxvWGFGZnBKQ0JwZ0I0SmFLcyIsImtpZCI6Ik1HTHFqOThWTkxvWGFGZnBKQ0JwZ0I0SmFLcyJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9lMjcxZTIzMy1iNjJlLTRjY2MtYmM1OS1kNDA3MWIyMDI4MjAvIiwiaWF0IjoxNzIyNDYyMzgyLCJuYmYiOjE3MjI0NjIzODIsImV4cCI6MTcyMjQ2NjI4MiwiYWlvIjoiRTJkZ1lHZ0t2N1dUM1hwdW91dFRyY09kNzJia0FRQT0iLCJhcHBfZGlzcGxheW5hbWUiOiJub2RlYWN0aW9uIiwiYXBwaWQiOiJmMzYxOTRkNS0xYWNjLTQ4NGEtYjk5YS0yYjQ1MWRlNWE1ZWIiLCJhcHBpZGFjciI6IjEiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9lMjcxZTIzMy1iNjJlLTRjY2MtYmM1OS1kNDA3MWIyMDI4MjAvIiwiaWR0eXAiOiJhcHAiLCJvaWQiOiJkOGI1MTQ3OC05NjcxLTQ2ZWItOTQyMi1mYmU0Mjk0YTllODUiLCJyaCI6IjAuQVZFQU0tSng0aTYyekV5OFdkUUhHeUFvSUFNQUFBQUFBQUFBd0FBQUFBQUFBQURRQUFBLiIsInJvbGVzIjpbIlVzZXIuUmVhZEJhc2ljLkFsbCIsIlVzZXIuUmVhZC5BbGwiLCJEZXZpY2VNYW5hZ2VtZW50Q29uZmlndXJhdGlvbi5SZWFkLkFsbCIsIkRldmljZU1hbmFnZW1lbnRDb25maWd1cmF0aW9uLlJlYWRXcml0ZS5BbGwiXSwic3ViIjoiZDhiNTE0NzgtOTY3MS00NmViLTk0MjItZmJlNDI5NGE5ZTg1IiwidGVuYW50X3JlZ2lvbl9zY29wZSI6Ik5BIiwidGlkIjoiZTI3MWUyMzMtYjYyZS00Y2NjLWJjNTktZDQwNzFiMjAyODIwIiwidXRpIjoiMHp2clF0ZTh2a1NXd1hNRXRTMmZBQSIsInZlciI6IjEuMCIsIndpZHMiOlsiMDk5N2ExZDAtMGQxZC00YWNiLWI0MDgtZDVjYTczMTIxZTkwIl0sInhtc19pZHJlbCI6IjI2IDciLCJ4bXNfdGNkdCI6MTcwNDI5MDQyN30.RDmjf9IxBzuUm40Tr0xZyphLhFJ-SNVi24vGBaimhHRJHbNNux0K3CcUo5EaqQ57ygS4ILt3RMV4ZSAwD8v_ZHxqDgJk-DlAKqScU9udbxAt8fwZpeRtD0yB3vqtksz55AH2z7UKZcMpg_zwM3IWPDUOmQbzLQlOh9nakW9UDMZBPUhAgiNuK0eRAN4yqUfnrQXF6o8VDS1YpZalvVV3WQk5McXEshrkDxgP_Vdg9YaOOC7HauzYDTWsiXzJ3uv68ONbQ8SL7irSayekfRAD2lDDjvtc7Qn5D54q8IZg0zjR5G2jANvVPJy3Cp1K-2fRRFYAOO535JaONmCPkBO7Kw",
+      "User-Agent": "axios/1.7.2",
+      "Accept-Encoding": "gzip, compress, deflate, br"
+    },
+    "method": "get",
+    "url": "https://graph.microsoft.com/beta/deviceManagement/inventorySettings"
+  },
+  "code": "ERR_BAD_REQUEST",
+  "status": 403
+}

@@ -1,0 +1,147 @@
+{
+    "name": "Mac Exclusion Test Policy",
+    "description": "",
+    "settings": [
+        {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationSetting",
+            "settingInstance": {
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance",
+                "groupSettingCollectionValue": [
+                    {
+                        "children": [
+                            {
+                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                "choiceSettingValue": {
+                                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                                    "children": [
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                            "choiceSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                                                "children": [],
+                                                "value": "com.apple.managedclient.preferences_exclusions_item_isdirectory_true"
+                                            },
+                                            "settingDefinitionId": "com.apple.managedclient.preferences_exclusions_item_isdirectory"
+                                        },
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                            "settingDefinitionId": "com.apple.managedclient.preferences_exclusions_item_path",
+                                            "simpleSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+                                                "value": "/mac/path"
+                                            }
+                                        }
+                                    ],
+                                    "settingValueTemplateReference": {
+                                        "settingValueTemplateId": "239ca1ae-4a48-472d-bb21-055da52a357a"
+                                    },
+                                    "value": "com.apple.managedclient.preferences_exclusions_item_$type_0"
+                                },
+                                "settingDefinitionId": "com.apple.managedclient.preferences_exclusions_item_$type",
+                                "settingInstanceTemplateReference": {
+                                    "settingInstanceTemplateId": "c82b1199-193b-45aa-bdfe-0d38a9001e82"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "children": [
+                            {
+                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                "choiceSettingValue": {
+                                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                                    "children": [
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                            "settingDefinitionId": "com.apple.managedclient.preferences_exclusions_item_extension",
+                                            "simpleSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+                                                "value": "mac_ext"
+                                            }
+                                        }
+                                    ],
+                                    "settingValueTemplateReference": {
+                                        "settingValueTemplateId": "f1c063e4-da8e-42b4-9207-205b6633a24c"
+                                    },
+                                    "value": "com.apple.managedclient.preferences_exclusions_item_$type_1"
+                                },
+                                "settingDefinitionId": "com.apple.managedclient.preferences_exclusions_item_$type",
+                                "settingInstanceTemplateReference": {
+                                    "settingInstanceTemplateId": "f30186fc-2254-4911-9111-d9028885bcba"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "children": [
+                            {
+                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                "choiceSettingValue": {
+                                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                                    "children": [
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                            "settingDefinitionId": "com.apple.managedclient.preferences_exclusions_item_name",
+                                            "simpleSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+                                                "value": "/mac/filename"
+                                            }
+                                        }
+                                    ],
+                                    "settingValueTemplateReference": {
+                                        "settingValueTemplateId": "6c6c508d-0dda-465f-81ae-678452c0bc27"
+                                    },
+                                    "value": "com.apple.managedclient.preferences_exclusions_item_$type_2"
+                                },
+                                "settingDefinitionId": "com.apple.managedclient.preferences_exclusions_item_$type",
+                                "settingInstanceTemplateReference": {
+                                    "settingInstanceTemplateId": "03b2d4e8-eb88-4e76-b7eb-bfa9ebf1f4eb"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "children": [
+                            {
+                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                "choiceSettingValue": {
+                                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                                    "children": [
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                            "choiceSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                                                "children": [],
+                                                "value": "com.apple.managedclient.preferences_exclusions_item_isdirectory_false"
+                                            },
+                                            "settingDefinitionId": "com.apple.managedclient.preferences_exclusions_item_isdirectory"
+                                        },
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                            "settingDefinitionId": "com.apple.managedclient.preferences_exclusions_item_path",
+                                            "simpleSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+                                                "value": "/disabled/mac/path"
+                                            }
+                                        }
+                                    ],
+                                    "value": "com.apple.managedclient.preferences_exclusions_item_$type_0"
+                                },
+                                "settingDefinitionId": "com.apple.managedclient.preferences_exclusions_item_$type"
+                            }
+                        ]
+                    }
+                ],
+                "settingInstanceTemplateReference": {
+                    "settingInstanceTemplateId": "16162b31-076e-43b6-9e35-3d1f4a248eee"
+                },
+                "settingDefinitionId": "com.apple.managedclient.preferences_exclusions"
+            }
+        }
+    ],
+    "platforms": "macOS",
+    "technologies": "mdm,appleRemoteManagement,microsoftSense",
+    "templateReference": {
+        "templateId": "43397174-2244-4006-b5ad-421b369e90d4_1"
+    }
+}

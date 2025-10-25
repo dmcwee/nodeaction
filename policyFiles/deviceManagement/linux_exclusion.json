@@ -1,0 +1,154 @@
+{
+    "name": "Linux exclusions",
+    "description": "",
+    "creationSource": null,
+    "settings": [
+        {
+            "id": "0",
+            "settingInstance": {
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstance",
+                "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions",
+                "settingInstanceTemplateReference": {
+                    "settingInstanceTemplateId": "19436ea0-e842-4e29-861a-d8b781e1dcb5"
+                },
+                "groupSettingCollectionValue": [
+                    {
+                        "settingValueTemplateReference": null,
+                        "children": [
+                            {
+                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions_item_$type",
+                                "settingInstanceTemplateReference": {
+                                    "settingInstanceTemplateId": "08bb2b44-765c-4005-a196-9d130b690190"
+                                },
+                                "choiceSettingValue": {
+                                    "value": "linux_mdatp_managed_antivirusengine_exclusions_item_$type_1",
+                                    "settingValueTemplateReference": {
+                                        "settingValueTemplateId": "acd7aa70-58af-4c3c-95d9-e2d5509acac2",
+                                        "useTemplateDefault": false
+                                    },
+                                    "children": [
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                            "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions_item_extension",
+                                            "simpleSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+                                                "value": "linux_ext"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "settingValueTemplateReference": null,
+                        "children": [
+                            {
+                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions_item_$type",
+                                "settingInstanceTemplateReference": {
+                                    "settingInstanceTemplateId": "c1a735f4-e7d8-49b9-8ef0-3c5170b26cbb"
+                                },
+                                "choiceSettingValue": {
+                                    "value": "linux_mdatp_managed_antivirusengine_exclusions_item_$type_0",
+                                    "settingValueTemplateReference": {
+                                        "settingValueTemplateId": "195059b8-e9a8-4e21-90ff-66890c879750",
+                                        "useTemplateDefault": false
+                                    },
+                                    "children": [
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                            "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions_item_isdirectory",
+                                            "settingInstanceTemplateReference": null,
+                                            "choiceSettingValue": {
+                                                "settingValueTemplateReference": null,
+                                                "value": "linux_mdatp_managed_antivirusengine_exclusions_item_isdirectory_true",
+                                                "children": []
+                                            }
+                                        },
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                            "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions_item_path",
+                                            "simpleSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+                                                "value": "/linux/path/enabled"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "children": [
+                            {
+                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                "choiceSettingValue": {
+                                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                                    "children": [
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                            "choiceSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                                                "children": [],
+                                                "value": "linux_mdatp_managed_antivirusengine_exclusions_item_isdirectory_false"
+                                            },
+                                            "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions_item_isdirectory"
+                                        },
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                            "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions_item_path",
+                                            "simpleSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+                                                "value": "/linux/path/disabled"
+                                            }
+                                        }
+                                    ],
+                                    "settingValueTemplateReference": {
+                                        "settingValueTemplateId": "ce1dd14b-c427-4bba-9752-d1028aef9d36"
+                                    },
+                                    "value": "linux_mdatp_managed_antivirusengine_exclusions_item_$type_0"
+                                },
+                                "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions_item_$type",
+                                "settingInstanceTemplateReference": {
+                                    "settingInstanceTemplateId": "9966c16f-8dc4-40d6-9c90-e22bb7365ec7"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "children": [
+                            {
+                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+                                "choiceSettingValue": {
+                                    "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
+                                    "children": [
+                                        {
+                                            "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingInstance",
+                                            "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions_item_name",
+                                            "simpleSettingValue": {
+                                                "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+                                                "value": "/linux/process"
+                                            }
+                                        }
+                                    ],
+                                    "value": "linux_mdatp_managed_antivirusengine_exclusions_item_$type_2"
+                                },
+                                "settingDefinitionId": "linux_mdatp_managed_antivirusengine_exclusions_item_$type"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "roleScopeTagIds": [
+        "0"
+    ],
+    "platforms": "linux",
+    "technologies": "microsoftSense",
+    "templateReference": {
+        "templateId": "8a17a1e5-3df4-4e07-9d20-3878267a79b8_1"
+    }
+}

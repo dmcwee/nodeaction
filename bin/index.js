@@ -78,6 +78,7 @@ async function main() {
             try {
                 const isFolder = await file.isFolder(options.p);
                 if(isFolder){
+                    console.log(`Importing from folder ${options.p}`);
                     const files = await file.readDir(options.p);
                     for(let policyfile of files){
                         const fileContent = JSON.parse(await file.readFile(`${options.p}/${policyfile}`));
@@ -93,6 +94,7 @@ async function main() {
                     }
                 }
                 else {
+                    console.log(`Importing from file ${options.p}`)
                     const content = JSON.parse(await file.readFile(options.p));
                     if(options.name && options.name !== "") {
                         console.log(`Adding Prefix '${options.name}-' to policy name ${content['name']}`)
@@ -103,7 +105,7 @@ async function main() {
                 }
             }
             catch(error) {
-                //console.error(error);
+                console.error(error);
             }
             break;
         case 'new':

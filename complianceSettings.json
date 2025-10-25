@@ -1,0 +1,1473 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/complianceSettings",
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Linux - Allowed Distributions",
+        "Allowed Distributions"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210210"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/Distribution/AllowedDistros/{0}/$type",
+      "rootDefinitionId": "linux_distribution_alloweddistros",
+      "categoryId": "f2c81665-b10b-4fa2-b177-7781b8650292",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "linux_distribution_alloweddistros_item_$type",
+      "description": null,
+      "helpText": null,
+      "name": "AllowedDistros_Item_$type",
+      "displayName": "Type",
+      "version": "638569342246964627",
+      "defaultOptionId": "linux_distribution_alloweddistros_item_$type_ubuntu",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "linux_distribution_alloweddistros_item_$type_ubuntu",
+          "description": null,
+          "helpText": null,
+          "name": "Ubuntu",
+          "displayName": "Ubuntu",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "ubuntu"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "linux_distribution_alloweddistros",
+              "parentSettingId": "linux_distribution_alloweddistros"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "linux_distribution_alloweddistros_item_$type_rhel",
+          "description": null,
+          "helpText": null,
+          "name": "Red Hat Enterprise Linux",
+          "displayName": "RHEL",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "rhel"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "linux_distribution_alloweddistros",
+              "parentSettingId": "linux_distribution_alloweddistros"
+            }
+          ],
+          "dependedOnBy": []
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Linux - Allowed Distributions",
+        "Allowed Distributions"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210210"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/Distribution/AllowedDistros",
+      "rootDefinitionId": "linux_distribution_alloweddistros",
+      "categoryId": "f2c81665-b10b-4fa2-b177-7781b8650292",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "linux_distribution_alloweddistros",
+      "description": "Specifies which Linux distributions and versions are considered compliant.",
+      "helpText": null,
+      "name": "AllowedDistros",
+      "displayName": "Allowed Distros",
+      "version": "638569342246964627",
+      "childIds": [
+        "linux_distribution_alloweddistros_item_$type",
+        "linux_distribution_alloweddistros_item_minimumversion",
+        "linux_distribution_alloweddistros_item_maximumversion"
+      ],
+      "maximumCount": 2147483647,
+      "minimumCount": 0,
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "dependentOn": [],
+      "dependedOnBy": [
+        {
+          "dependedOnBy": "linux_distribution_alloweddistros_item_$type",
+          "required": true
+        },
+        {
+          "dependedOnBy": "linux_distribution_alloweddistros_item_minimumversion",
+          "required": false
+        },
+        {
+          "dependedOnBy": "linux_distribution_alloweddistros_item_maximumversion",
+          "required": false
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Linux - Password Policy",
+        "Password Policy"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210105"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/PasswordPolicy/MinimumLowercase",
+      "rootDefinitionId": "linux_passwordpolicy_minimumlowercase",
+      "categoryId": "8ccafa97-9bbb-40e1-b668-3110bc449ac2",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "linux_passwordpolicy_minimumlowercase",
+      "description": "Specifies the minimum number of lowercase letters a password must contain.",
+      "helpText": null,
+      "name": "MinimumLowercase",
+      "displayName": "Minimum Lowercase",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition",
+        "maximumValue": 2147483647,
+        "minimumValue": 0
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+        "settingValueTemplateReference": null,
+        "value": 0
+      },
+      "dependentOn": [],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Device Password Expiration",
+        "Device Lock"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-devicelock#devicelock-devicepasswordexpiration"
+      ],
+      "baseUri": "./Device/Vendor/MSFT/Policy",
+      "offsetUri": "/Config/DeviceLock/DevicePasswordExpiration",
+      "rootDefinitionId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled",
+      "categoryId": "a4fb2510-977f-42ff-9033-6f1eb98f141b",
+      "settingUsage": "configuration,compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "device_vendor_msft_policy_config_devicelock_devicepasswordexpiration",
+      "description": "Specifies when the password expires (in days). 0 - Passwords do not expire.",
+      "helpText": "",
+      "name": "DevicePasswordExpiration",
+      "displayName": "Device Password Expiration",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.10240",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition",
+        "maximumValue": 730,
+        "minimumValue": 0
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+        "settingValueTemplateReference": null,
+        "value": 0
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+          "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Min Device Password Length",
+        "Device Lock"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-devicelock#devicelock-mindevicepasswordlength"
+      ],
+      "baseUri": "./Device/Vendor/MSFT/Policy",
+      "offsetUri": "/Config/DeviceLock/MinDevicePasswordLength",
+      "rootDefinitionId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled",
+      "categoryId": "a4fb2510-977f-42ff-9033-6f1eb98f141b",
+      "settingUsage": "configuration,compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "device_vendor_msft_policy_config_devicelock_mindevicepasswordlength",
+      "description": "Specifies the minimum number or characters required in the PIN or password.",
+      "helpText": "",
+      "name": "MinDevicePasswordLength",
+      "displayName": "Min Device Password Length",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.10240",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition",
+        "maximumValue": 16,
+        "minimumValue": 4
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+        "settingValueTemplateReference": null,
+        "value": 4
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+          "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "DevicePasswordEnabled",
+        "DeviceLock",
+        "Device Lock"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-devicelock#devicelock-devicepasswordenabled"
+      ],
+      "baseUri": "./Device/Vendor/MSFT/Policy",
+      "offsetUri": "/Config/DeviceLock/DevicePasswordEnabled",
+      "rootDefinitionId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled",
+      "categoryId": "a4fb2510-977f-42ff-9033-6f1eb98f141b",
+      "settingUsage": "configuration,compliance",
+      "uxBehavior": "toggle",
+      "visibility": "settingsCatalog,template",
+      "id": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled",
+      "description": "Specifies whether device lock is enabled.",
+      "helpText": "",
+      "name": "DevicePasswordEnabled",
+      "displayName": "Device Password Enabled",
+      "version": "638569342246964627",
+      "defaultOptionId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_1",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.10240",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+          "description": "Enabled",
+          "helpText": null,
+          "name": "Enabled",
+          "displayName": "Enabled",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 0
+          },
+          "dependentOn": [],
+          "dependedOnBy": [
+            {
+              "dependedOnBy": "device_vendor_msft_policy_config_devicelock_allowidlereturnwithoutpassword",
+              "required": false
+            },
+            {
+              "dependedOnBy": "device_vendor_msft_policy_config_devicelock_allowsimpledevicepassword",
+              "required": false
+            },
+            {
+              "dependedOnBy": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired",
+              "required": false
+            },
+            {
+              "dependedOnBy": "device_vendor_msft_policy_config_devicelock_devicepasswordexpiration",
+              "required": false
+            },
+            {
+              "dependedOnBy": "device_vendor_msft_policy_config_devicelock_devicepasswordhistory",
+              "required": false
+            },
+            {
+              "dependedOnBy": "device_vendor_msft_policy_config_devicelock_maxdevicepasswordfailedattempts",
+              "required": false
+            },
+            {
+              "dependedOnBy": "device_vendor_msft_policy_config_devicelock_maxinactivitytimedevicelock",
+              "required": false
+            },
+            {
+              "dependedOnBy": "device_vendor_msft_policy_config_devicelock_mindevicepasswordcomplexcharacters",
+              "required": false
+            },
+            {
+              "dependedOnBy": "device_vendor_msft_policy_config_devicelock_mindevicepasswordlength",
+              "required": false
+            }
+          ]
+        },
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_1",
+          "description": "Disabled",
+          "helpText": null,
+          "name": "Disabled",
+          "displayName": "Disabled",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 1
+          },
+          "dependentOn": [],
+          "dependedOnBy": []
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "CustomCompliance",
+        "Custom Compliance"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210013"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/CustomCompliance/Required",
+      "rootDefinitionId": "linux_customcompliance_required",
+      "categoryId": "9f52aad9-53cb-4f92-b21f-7f4a6721a623",
+      "settingUsage": "compliance",
+      "uxBehavior": "toggle",
+      "visibility": "settingsCatalog",
+      "id": "linux_customcompliance_required",
+      "description": "CustomCompliance",
+      "helpText": null,
+      "name": "CustomCompliance",
+      "displayName": "Require Custom Compliance",
+      "version": "638569342246964627",
+      "defaultOptionId": "linux_customcompliance_required_true",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "linux_customcompliance_required_false",
+          "description": null,
+          "helpText": null,
+          "name": "False",
+          "displayName": "False",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "false"
+          },
+          "dependentOn": [],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "linux_customcompliance_required_true",
+          "description": null,
+          "helpText": null,
+          "name": "True",
+          "displayName": "True",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "true"
+          },
+          "dependentOn": [],
+          "dependedOnBy": [
+            {
+              "dependedOnBy": "linux_customcompliance_rules",
+              "required": true
+            },
+            {
+              "dependedOnBy": "linux_customcompliance_discoveryscript",
+              "required": true
+            },
+            {
+              "dependedOnBy": "linux_customcompliance_executioncontext",
+              "required": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Custom Compliance"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210013"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/CustomCompliance/Rules",
+      "rootDefinitionId": "linux_customcompliance_required",
+      "categoryId": "9f52aad9-53cb-4f92-b21f-7f4a6721a623",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog",
+      "id": "linux_customcompliance_rules",
+      "description": "Select your rules file",
+      "helpText": null,
+      "name": "CustomCompliance_Rules",
+      "displayName": "Select your rules file",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "json",
+        "inputValidationSchema": null,
+        "maximumLength": 87516,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": [
+          "json"
+        ]
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": ""
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "linux_customcompliance_required_true",
+          "parentSettingId": "linux_customcompliance_required"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Require Device Encryption",
+        "LUKS",
+        "dm-crypt",
+        "Device Encryption"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210012"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/DeviceEncryption/Required",
+      "rootDefinitionId": "linux_deviceencryption_required",
+      "categoryId": "2dafc535-d0f1-4c8c-9829-044338deebfa",
+      "settingUsage": "compliance",
+      "uxBehavior": "toggle",
+      "visibility": "settingsCatalog,template",
+      "id": "linux_deviceencryption_required",
+      "description": "Specifies whether device-level encryption is required for writable fixed disks on this computer",
+      "helpText": null,
+      "name": "RequireDeviceEncryption",
+      "displayName": "Require Device Encryption",
+      "version": "638569342246964627",
+      "defaultOptionId": "linux_deviceencryption_required_false",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "linux_deviceencryption_required_false",
+          "description": null,
+          "helpText": null,
+          "name": "False",
+          "displayName": "False",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "false"
+          },
+          "dependentOn": [],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "linux_deviceencryption_required_true",
+          "description": null,
+          "helpText": null,
+          "name": "True",
+          "displayName": "True",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "true"
+          },
+          "dependentOn": [],
+          "dependedOnBy": []
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Linux - Password Policy",
+        "Password Policy"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210105"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/PasswordPolicy/MinimumDigits",
+      "rootDefinitionId": "linux_passwordpolicy_minimumdigits",
+      "categoryId": "8ccafa97-9bbb-40e1-b668-3110bc449ac2",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "linux_passwordpolicy_minimumdigits",
+      "description": "Specifies the minimum number of digits a password must contain.",
+      "helpText": null,
+      "name": "MinimumDigits",
+      "displayName": "Minimum Digits",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition",
+        "maximumValue": 2147483647,
+        "minimumValue": 0
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+        "settingValueTemplateReference": null,
+        "value": 0
+      },
+      "dependentOn": [],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Linux - Password Policy",
+        "Password Policy"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210105"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/PasswordPolicy/MinimumLength",
+      "rootDefinitionId": "linux_passwordpolicy_minimumlength",
+      "categoryId": "8ccafa97-9bbb-40e1-b668-3110bc449ac2",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "linux_passwordpolicy_minimumlength",
+      "description": "Specifies the minimum number of total characters a password must contain.",
+      "helpText": null,
+      "name": "MinimumLength",
+      "displayName": "Minimum Length",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition",
+        "maximumValue": 2147483647,
+        "minimumValue": 0
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+        "settingValueTemplateReference": null,
+        "value": 0
+      },
+      "dependentOn": [],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Linux - Password Policy",
+        "Password Policy"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210105"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/PasswordPolicy/MinimumSymbols",
+      "rootDefinitionId": "linux_passwordpolicy_minimumsymbols",
+      "categoryId": "8ccafa97-9bbb-40e1-b668-3110bc449ac2",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "linux_passwordpolicy_minimumsymbols",
+      "description": "Specifies the minimum number of symbols a password must contain.",
+      "helpText": null,
+      "name": "MinimumSymbols",
+      "displayName": "Minimum Symbols",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition",
+        "maximumValue": 2147483647,
+        "minimumValue": 0
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+        "settingValueTemplateReference": null,
+        "value": 0
+      },
+      "dependentOn": [],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Alphanumeric Device Password Required",
+        "Device Lock"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-devicelock#devicelock-alphanumericdevicepasswordrequired"
+      ],
+      "baseUri": "./Device/Vendor/MSFT/Policy",
+      "offsetUri": "/Config/DeviceLock/AlphanumericDevicePasswordRequired",
+      "rootDefinitionId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled",
+      "categoryId": "a4fb2510-977f-42ff-9033-6f1eb98f141b",
+      "settingUsage": "configuration,compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired",
+      "description": "Determines the type of PIN or password required. This policy only applies if the DeviceLock/DevicePasswordEnabled policy is set to 0",
+      "helpText": "",
+      "name": "AlphanumericDevicePasswordRequired",
+      "displayName": "Alphanumeric Device Password Required",
+      "version": "638569342246964627",
+      "defaultOptionId": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired_2",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.10240",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired_0",
+          "description": "Password or Alphanumeric PIN required.",
+          "helpText": null,
+          "name": "Password or Alphanumeric PIN required.",
+          "displayName": "Password or Alphanumeric PIN required.",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 0
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+            }
+          ],
+          "dependedOnBy": [
+            {
+              "dependedOnBy": "device_vendor_msft_policy_config_devicelock_mindevicepasswordcomplexcharacters",
+              "required": false
+            }
+          ]
+        },
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired_1",
+          "description": "Password or Numeric PIN required.",
+          "helpText": null,
+          "name": "Password or Numeric PIN required.",
+          "displayName": "Password or Numeric PIN required.",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 1
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired_2",
+          "description": "Password, Numeric PIN, or Alphanumeric PIN required.",
+          "helpText": null,
+          "name": "Password, Numeric PIN, or Alphanumeric PIN required.",
+          "displayName": "Password, Numeric PIN, or Alphanumeric PIN required.",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 2
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+            }
+          ],
+          "dependedOnBy": []
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Custom Compliance"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210013"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/CustomCompliance/DiscoveryScript",
+      "rootDefinitionId": "linux_customcompliance_required",
+      "categoryId": "9f52aad9-53cb-4f92-b21f-7f4a6721a623",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog",
+      "id": "linux_customcompliance_discoveryscript",
+      "description": "Select your discovery script",
+      "helpText": null,
+      "name": "CustomCompliance_Script",
+      "displayName": "Select your discovery script",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [
+        {
+          "settingDefinitionId": "linux_customcompliance_discoveryscript_reusablesetting"
+        }
+      ],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 0,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": ""
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "linux_customcompliance_required_true",
+          "parentSettingId": "linux_customcompliance_required"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Maximum OS Version",
+        "Linux - Allowed Distributions",
+        "Allowed Distributions"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210210"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/Distribution/AllowedDistros/{0}/MaximumVersion",
+      "rootDefinitionId": "linux_distribution_alloweddistros",
+      "categoryId": "f2c81665-b10b-4fa2-b177-7781b8650292",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "linux_distribution_alloweddistros_item_maximumversion",
+      "description": "",
+      "helpText": null,
+      "name": "AllowedDistros_Item_MaximumOSVersion",
+      "displayName": "Maximum OS Version",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "version",
+        "inputValidationSchema": null,
+        "maximumLength": 32,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": ""
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "linux_distribution_alloweddistros",
+          "parentSettingId": "linux_distribution_alloweddistros"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Linux - Password Policy",
+        "Password Policy"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210105"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/PasswordPolicy/MinimumUppercase",
+      "rootDefinitionId": "linux_passwordpolicy_minimumuppercase",
+      "categoryId": "8ccafa97-9bbb-40e1-b668-3110bc449ac2",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "linux_passwordpolicy_minimumuppercase",
+      "description": "Specifies the minimum number of uppercase letters a password must contain.",
+      "helpText": null,
+      "name": "MinimumUppercase",
+      "displayName": "Minimum Uppercase",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition",
+        "maximumValue": 2147483647,
+        "minimumValue": 0
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+        "settingValueTemplateReference": null,
+        "value": 0
+      },
+      "dependentOn": [],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Minimum OS Version",
+        "Linux - Allowed Distributions",
+        "Allowed Distributions"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210210"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/Distribution/AllowedDistros/{0}/MinimumVersion",
+      "rootDefinitionId": "linux_distribution_alloweddistros",
+      "categoryId": "f2c81665-b10b-4fa2-b177-7781b8650292",
+      "settingUsage": "compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "linux_distribution_alloweddistros_item_minimumversion",
+      "description": "",
+      "helpText": null,
+      "name": "AllowedDistros_Item_MinimumOSVersion",
+      "displayName": "Minimum OS Version",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "version",
+        "inputValidationSchema": null,
+        "maximumLength": 32,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": ""
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "linux_distribution_alloweddistros",
+          "parentSettingId": "linux_distribution_alloweddistros"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Min Device Password Complex Characters",
+        "Device Lock"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-devicelock#devicelock-mindevicepasswordcomplexcharacters"
+      ],
+      "baseUri": "./Device/Vendor/MSFT/Policy",
+      "offsetUri": "/Config/DeviceLock/MinDevicePasswordComplexCharacters",
+      "rootDefinitionId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled",
+      "categoryId": "a4fb2510-977f-42ff-9033-6f1eb98f141b",
+      "settingUsage": "configuration,compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "device_vendor_msft_policy_config_devicelock_mindevicepasswordcomplexcharacters",
+      "description": "The number of complex element types (uppercase and lowercase letters, numbers, and punctuation) required for a strong PIN or password.",
+      "helpText": "",
+      "name": "MinDevicePasswordComplexCharacters",
+      "displayName": "Min Device Password Complex Characters",
+      "version": "638569342246964627",
+      "defaultOptionId": "device_vendor_msft_policy_config_devicelock_mindevicepasswordcomplexcharacters_1",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.10240",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_mindevicepasswordcomplexcharacters_1",
+          "description": "Digits only",
+          "helpText": null,
+          "name": "Digits only",
+          "displayName": "Digits only",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 1
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+            },
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_mindevicepasswordcomplexcharacters_2",
+          "description": "Digits and lowercase letters are required",
+          "helpText": null,
+          "name": "Digits and lowercase letters are required",
+          "displayName": "Digits and lowercase letters are required",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 2
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+            },
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_mindevicepasswordcomplexcharacters_3",
+          "description": "Digits lowercase letters and uppercase letters are required. Not supported in desktop Microsoft accounts and domain accounts",
+          "helpText": null,
+          "name": "Digits lowercase letters and uppercase letters are required. Not supported in desktop Microsoft accounts and domain accounts",
+          "displayName": "Digits lowercase letters and uppercase letters are required. Not supported in desktop Microsoft accounts and domain accounts",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 3
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+            },
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_mindevicepasswordcomplexcharacters_4",
+          "description": "Digits lowercase letters uppercase letters and special characters are required. Not supported in desktop",
+          "helpText": null,
+          "name": "Digits lowercase letters uppercase letters and special characters are required. Not supported in desktop",
+          "displayName": "Digits lowercase letters uppercase letters and special characters are required. Not supported in desktop",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 4
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+            },
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_alphanumericdevicepasswordrequired"
+            }
+          ],
+          "dependedOnBy": []
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Max Inactivity Time Device Lock",
+        "Device Lock"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-devicelock#devicelock-maxinactivitytimedevicelock"
+      ],
+      "baseUri": "./Device/Vendor/MSFT/Policy",
+      "offsetUri": "/Config/DeviceLock/MaxInactivityTimeDeviceLock",
+      "rootDefinitionId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled",
+      "categoryId": "a4fb2510-977f-42ff-9033-6f1eb98f141b",
+      "settingUsage": "configuration,compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "device_vendor_msft_policy_config_devicelock_maxinactivitytimedevicelock",
+      "description": "Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked. Users can select any existing timeout value less than the specified maximum time in the Settings app. 0 - No timeout is defined",
+      "helpText": "",
+      "name": "MaxInactivityTimeDeviceLock",
+      "displayName": "Max Inactivity Time Device Lock",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.10240",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition",
+        "maximumValue": 999,
+        "minimumValue": 0
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+        "settingValueTemplateReference": null,
+        "value": 0
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+          "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Device Password History",
+        "Device Lock"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-devicelock#devicelock-devicepasswordhistory"
+      ],
+      "baseUri": "./Device/Vendor/MSFT/Policy",
+      "offsetUri": "/Config/DeviceLock/DevicePasswordHistory",
+      "rootDefinitionId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled",
+      "categoryId": "a4fb2510-977f-42ff-9033-6f1eb98f141b",
+      "settingUsage": "configuration,compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "device_vendor_msft_policy_config_devicelock_devicepasswordhistory",
+      "description": "Specifies how many passwords can be stored in the history that can’t be used.",
+      "helpText": "",
+      "name": "DevicePasswordHistory",
+      "displayName": "Device Password History",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.10240",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition",
+        "maximumValue": 50,
+        "minimumValue": 0
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+        "settingValueTemplateReference": null,
+        "value": 0
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+          "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Allow Simple Device Password",
+        "Device Lock"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-devicelock#devicelock-allowsimpledevicepassword"
+      ],
+      "baseUri": "./Device/Vendor/MSFT/Policy",
+      "offsetUri": "/Config/DeviceLock/AllowSimpleDevicePassword",
+      "rootDefinitionId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled",
+      "categoryId": "a4fb2510-977f-42ff-9033-6f1eb98f141b",
+      "settingUsage": "configuration,compliance",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "device_vendor_msft_policy_config_devicelock_allowsimpledevicepassword",
+      "description": "Specifies whether PINs or passwords such as 1111 or 1234 are allowed. For the desktop, it also controls the use of picture passwords.",
+      "helpText": "",
+      "name": "AllowSimpleDevicePassword",
+      "displayName": "Allow Simple Device Password",
+      "version": "638569342246964627",
+      "defaultOptionId": "device_vendor_msft_policy_config_devicelock_allowsimpledevicepassword_1",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.10240",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_allowsimpledevicepassword_0",
+          "description": "Not allowed.",
+          "helpText": null,
+          "name": "Not allowed.",
+          "displayName": "Not allowed.",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 0
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_policy_config_devicelock_allowsimpledevicepassword_1",
+          "description": "Allowed.",
+          "helpText": null,
+          "name": "Allowed.",
+          "displayName": "Allowed.",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue",
+            "settingValueTemplateReference": null,
+            "value": 1
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled_0",
+              "parentSettingId": "device_vendor_msft_policy_config_devicelock_devicepasswordenabled"
+            }
+          ],
+          "dependedOnBy": []
+        }
+      ]
+    }
+  ]
+}

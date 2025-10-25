@@ -1,0 +1,2332 @@
+{
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/reusableSettings",
+  "value": [
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "none",
+      "keywords": [
+        "Font"
+      ],
+      "infoUrls": [],
+      "occurrence": null,
+      "baseUri": "",
+      "offsetUri": "Font",
+      "rootDefinitionId": "com.apple.font_font_referred_setting",
+      "categoryId": "5401711f-292a-487a-be18-f99593a0477c",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "com.apple.font_font_referred_setting",
+      "description": "The contents of the font file.",
+      "helpText": null,
+      "name": "Font",
+      "displayName": "Font",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "iOS,macOS",
+        "deviceMode": "none",
+        "technologies": "mdm,appleRemoteManagement"
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "base64",
+        "inputValidationSchema": null,
+        "maximumLength": 2147483647,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": [
+          "ttf",
+          "otf"
+        ]
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": ""
+      },
+      "dependentOn": [],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "get",
+      "keywords": [
+        "Custom Compliance"
+      ],
+      "infoUrls": [
+        "https://go.microsoft.com/fwlink/?linkid=2210013"
+      ],
+      "occurrence": null,
+      "baseUri": "com.microsoft.manage.LinuxMdm",
+      "offsetUri": "/CustomCompliance/DiscoveryScript/ReusableSetting",
+      "rootDefinitionId": "linux_customcompliance_discoveryscript_reusablesetting",
+      "categoryId": "9f52aad9-53cb-4f92-b21f-7f4a6721a623",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog",
+      "id": "linux_customcompliance_discoveryscript_reusablesetting",
+      "description": "Placeholder",
+      "helpText": "Placeholder",
+      "name": "CustomCompliance_Script",
+      "displayName": "Script",
+      "version": "638569342246964627",
+      "applicability": {
+        "description": null,
+        "platform": "linux",
+        "deviceMode": "none",
+        "technologies": "linuxMdm"
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 0,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": ""
+      },
+      "dependentOn": [],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/printer-protection-overview?view=o365-worldwide"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid",
+      "description": "Includes USB, Corporate, Network, Universal, File, Custom, or Local",
+      "helpText": "",
+      "name": "PrinterConnectionId",
+      "displayName": "PrinterConnectionId",
+      "version": "638569342246964627",
+      "defaultOptionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid_0",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid_0",
+          "description": "USB",
+          "helpText": null,
+          "name": "USB",
+          "displayName": "USB",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "Usb"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+              "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid_1",
+          "description": "Corporate",
+          "helpText": null,
+          "name": "Corporate",
+          "displayName": "Corporate",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "Corporate"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+              "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid_2",
+          "description": "Network",
+          "helpText": null,
+          "name": "Network",
+          "displayName": "Network",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "Network"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+              "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid_3",
+          "description": "Universal",
+          "helpText": null,
+          "name": "Universal",
+          "displayName": "Universal",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "Universal"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+              "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid_4",
+          "description": "File",
+          "helpText": null,
+          "name": "File",
+          "displayName": "File",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "File"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+              "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid_5",
+          "description": "Custom",
+          "helpText": null,
+          "name": "Custom",
+          "displayName": "Custom",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "Custom"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+              "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid_6",
+          "description": "Local",
+          "helpText": null,
+          "name": "Local",
+          "displayName": "Local",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "Local"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+              "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+            }
+          ],
+          "dependedOnBy": []
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/printer-protection-overview?view=o365-worldwide"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+      "description": "",
+      "helpText": "",
+      "name": "DescriptorIdList",
+      "displayName": "PrinterDevicesIdList",
+      "version": "638569342246964627",
+      "childIds": [
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_name",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_primaryid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_friendlynameid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_vid_pid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid"
+      ],
+      "maximumCount": 100,
+      "minimumCount": 1,
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata"
+        }
+      ],
+      "dependedOnBy": [
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_name",
+          "required": true
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_primaryid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_friendlynameid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_vid_pid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_printerconnectionid",
+          "required": false
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_serialnumberid",
+      "description": "For example, 002324B534BCB431B000058A",
+      "helpText": "",
+      "name": "SerialNumberId",
+      "displayName": "SerialNumberId",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_busid",
+      "description": "",
+      "helpText": "",
+      "name": "BusId",
+      "displayName": "BusId",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/printer-protection-overview?view=o365-worldwide"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_primaryid",
+      "description": "Learn more about the printer protection primary ID",
+      "helpText": "",
+      "name": "PrimaryId",
+      "displayName": "PrimaryId",
+      "version": "638569342246964627",
+      "defaultOptionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_primaryid_0",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_primaryid_0",
+          "description": "Printer Devices",
+          "helpText": null,
+          "name": "Printer Devices",
+          "displayName": "Printer Devices",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "PrinterDevices"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+              "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+            }
+          ],
+          "dependedOnBy": []
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_matchtype",
+      "description": "When there are multiple device properties being used in the DescriptorIDList, MatchType defines the relationship.",
+      "helpText": "",
+      "name": "MatchType",
+      "displayName": "Match type",
+      "version": "638569342246964627",
+      "defaultOptionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_matchtype_matchany",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_matchtype_matchany",
+          "description": null,
+          "helpText": null,
+          "name": "MatchAny",
+          "displayName": "Match any",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "MatchAny"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+              "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata"
+            }
+          ],
+          "dependedOnBy": []
+        },
+        {
+          "itemId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_matchtype_matchall",
+          "description": null,
+          "helpText": null,
+          "name": "MatchAll",
+          "displayName": "Match all",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "MatchAll"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+              "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata"
+            }
+          ],
+          "dependedOnBy": []
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+      "description": "Microsoft Defender for Endpoint Device Control Removable Storage Protection allows you to restrict the removable storage access based on the properties.",
+      "helpText": "",
+      "name": "DescriptorIdList",
+      "displayName": "Device properties",
+      "version": "638569342246964627",
+      "childIds": [
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_name",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_primaryid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_vid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_pid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_deviceid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_busid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_hardwareid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_instancepathid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_friendlynameid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_vid_pid",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_serialnumberid"
+      ],
+      "maximumCount": 100,
+      "minimumCount": 1,
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata"
+        }
+      ],
+      "dependedOnBy": [
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_name",
+          "required": true
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_primaryid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_vid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_pid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_deviceid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_busid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_hardwareid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_instancepathid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_friendlynameid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_vid_pid",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_serialnumberid",
+          "required": false
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_deviceid",
+      "description": "Standard USB Identifiers, for example, USBSTOR\\DISK&VEN_GENERIC&PROD_FLASH_DISK&REV_8.07",
+      "helpText": "",
+      "name": "DeviceId",
+      "displayName": "DeviceId",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition",
+      "accessTypes": "add,delete,get",
+      "keywords": [
+        "Auto Resolve",
+        "Firewall"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/windows/client-management/mdm/Firewall-csp/"
+      ],
+      "baseUri": "./Vendor/MSFT/Firewall",
+      "offsetUri": "/MdmStore/DynamicKeywords/Addresses/{0}/AutoResolve",
+      "rootDefinitionId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}",
+      "categoryId": "4a5e4714-00ac-4793-b0cc-5049041b0ed7",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "toggle",
+      "visibility": "settingsCatalog,template",
+      "id": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_autoresolve",
+      "description": "If this flag is set to TRUE, then the 'keyword' field of this object is expected to be a fully qualified domain name, and the addresses will be automatically resolved. This flag should only be set if the Microsoft Defender Advanced Threat Protection Service is present.",
+      "helpText": "",
+      "name": "AutoResolve",
+      "displayName": "Auto Resolve",
+      "version": "638569342246964627",
+      "defaultOptionId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_autoresolve_false",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,configManager,microsoftSense",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.19042.1706",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "options": [
+        {
+          "itemId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_autoresolve_false",
+          "description": "AutoResolve False",
+          "helpText": null,
+          "name": "AutoResolve False",
+          "displayName": "False",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "false"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}",
+              "parentSettingId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}"
+            }
+          ],
+          "dependedOnBy": [
+            {
+              "dependedOnBy": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_addresses",
+              "required": true
+            }
+          ]
+        },
+        {
+          "itemId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_autoresolve_true",
+          "description": "AutoResolve True",
+          "helpText": null,
+          "name": "AutoResolve True",
+          "displayName": "True",
+          "optionValue": {
+            "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+            "settingValueTemplateReference": null,
+            "value": "true"
+          },
+          "dependentOn": [
+            {
+              "dependentOn": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}",
+              "parentSettingId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}"
+            }
+          ],
+          "dependedOnBy": []
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Certificate",
+        "Reusbale Certificate",
+        "Privilege Management"
+      ],
+      "infoUrls": [],
+      "baseUri": "./Device/Vendor/MSFT/Policy",
+      "offsetUri": "/PrivilegeManagement/ReusableCertificate/CertificatePayload",
+      "rootDefinitionId": "device_vendor_msft_policy_privilegemanagement_reusablesettings_certificatefile",
+      "categoryId": "4f3a6fca-a74c-448d-95b1-9d6d7a5d4449",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_policy_privilegemanagement_reusablesettings_certificatefile",
+      "description": null,
+      "helpText": null,
+      "name": "ReusableCertificateFile",
+      "displayName": "Certificate file",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "endpointPrivilegeManagement",
+        "configurationServiceProviderVersion": null,
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.17134",
+        "windowsSkus": [
+          "windowsProfessional",
+          "windowsEnterprise",
+          "windowsEducation",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "base64",
+        "inputValidationSchema": null,
+        "maximumLength": 800000,
+        "minimumLength": 15,
+        "isSecret": false,
+        "fileTypes": [
+          "cer"
+        ]
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "none",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_id",
+      "description": "GUID, a unique ID, represents the group and will be used in the policy as GroupId.",
+      "helpText": "",
+      "name": "Id",
+      "displayName": "ID",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_pid",
+      "description": "Four-digit product code that the vendor assigns to the device.",
+      "helpText": "",
+      "name": "PID",
+      "displayName": "PID",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_vid",
+      "description": "Four-digit vendor code that the USB committee assigns to the vendor.",
+      "helpText": "",
+      "name": "VID",
+      "displayName": "VID",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/printer-protection-overview?view=o365-worldwide"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_vid_pid",
+      "description": "Vendor ID is the four-digit vendor code that the USB committee assigns to the vendor. Product ID is the four-digit product code that the vendor assigns to the device; Support wildcard. For example. 0751_55E0",
+      "helpText": "",
+      "name": "VID_PID",
+      "displayName": "VID_PID",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/printer-protection-overview?view=o365-worldwide"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_name",
+      "description": "",
+      "helpText": "",
+      "name": "Name",
+      "displayName": "Name",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get",
+      "keywords": [
+        "Firewall"
+      ],
+      "infoUrls": [],
+      "baseUri": "./Vendor/MSFT/Firewall",
+      "offsetUri": "/MdmStore/DynamicKeywords/Addresses/{0}/Id",
+      "rootDefinitionId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}",
+      "categoryId": "4a5e4714-00ac-4793-b0cc-5049041b0ed7",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "none",
+      "id": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_id",
+      "description": null,
+      "helpText": null,
+      "name": "Id",
+      "displayName": null,
+      "version": "638569342246964627",
+      "defaultValue": null,
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,configManager,microsoftSense",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.16299",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 100
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "guid",
+        "inputValidationSchema": null,
+        "maximumLength": 87516,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}",
+          "parentSettingId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get",
+      "keywords": [
+        "Keyword",
+        "Firewall"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/windows/client-management/mdm/Firewall-csp/"
+      ],
+      "baseUri": "./Vendor/MSFT/Firewall",
+      "offsetUri": "/MdmStore/DynamicKeywords/Addresses/{0}/Keyword",
+      "rootDefinitionId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}",
+      "categoryId": "4a5e4714-00ac-4793-b0cc-5049041b0ed7",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_keyword",
+      "description": "A String representing keyword. If the AutoResolve value is true, this should be a Fully Qualified Domain name (wildcards accepted, for example \"contoso.com\" or \"*.contoso.com\"). If the AutoResolve value is false, then this can be any identifier string.",
+      "helpText": "",
+      "name": "Keyword",
+      "displayName": "Keyword",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,configManager,microsoftSense",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.19042.1706",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 87516,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}",
+          "parentSettingId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_vid_pid",
+      "description": "Vendor ID is the four-digit vendor code that the USB committee assigns to the vendor. Product ID is the four-digit product code that the vendor assigns to the device; Support wildcard.",
+      "helpText": "",
+      "name": "VID_PID",
+      "displayName": "VID_PID",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_hardwareid",
+      "description": "A string identified the device in the system, for example, USBSTOR\\DiskGeneric_Flash_Disk___8.07; Note: Hardware ID is not unique; different devices might share the same value.",
+      "helpText": "",
+      "name": "HardwareId",
+      "displayName": "HardwareId",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_instancepathid",
+      "description": "A string uniquely identifies the device in the system, for example, USBSTOR\\DISK&VEN_GENERIC&PROD_FLASH_DISK&REV_8.07\\8735B611&0",
+      "helpText": "",
+      "name": "InstancePathId",
+      "displayName": "InstancePathId",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "description": "",
+      "helpText": "",
+      "name": "Group",
+      "displayName": "Group",
+      "version": "638569342246964627",
+      "childIds": [
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_id",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_matchtype",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+        "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+      ],
+      "maximumCount": 1,
+      "minimumCount": 1,
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "dependentOn": [],
+      "dependedOnBy": [
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_id",
+          "required": true
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_matchtype",
+          "required": true
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "required": false
+        },
+        {
+          "dependedOnBy": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+          "required": false
+        }
+      ]
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_name",
+      "description": "",
+      "helpText": "",
+      "name": "Name",
+      "displayName": "Name",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_primaryid",
+      "description": "The Primary ID includes removable storage and CD/DVD and Windows Portable Device/WPD.",
+      "helpText": "",
+      "name": "PrimaryId",
+      "displayName": "PrimaryId",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/printer-protection-overview?view=o365-worldwide"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist_friendlynameid",
+      "description": "A string that's attached to the device (the same string as the Friendly name in Device Manager). For example, Generic Flash Disk USB Device",
+      "helpText": "",
+      "name": "FriendlyNameId",
+      "displayName": "FriendlyNameId",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_printerdevicesidlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Defender",
+        "DeviceControl",
+        "Device Control"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/device-control-removable-storage-access-control"
+      ],
+      "baseUri": "./device/vendor/msft/defender",
+      "offsetUri": "/configuration/devicecontrol/policygroups/{0}/groupdata",
+      "rootDefinitionId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata",
+      "categoryId": "5ed18ca1-36d1-4375-bfd6-fd67801c2659",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "template",
+      "id": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist_friendlynameid",
+      "description": "A string attached to the device, for example, Generic Flash Disk USB Device.",
+      "helpText": "",
+      "name": "FriendlyNameId",
+      "displayName": "FriendlyNameId",
+      "version": "638569342246964627",
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,microsoftSense",
+        "configurationServiceProviderVersion": "1.3",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.18362",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsHome",
+          "unknown",
+          "windowsEducation",
+          "windowsMultiSession",
+          "surfaceHub",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 1,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "none",
+        "inputValidationSchema": null,
+        "maximumLength": 1024,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist",
+          "parentSettingId": "device_vendor_msft_defender_configuration_devicecontrol_policygroups_{groupid}_groupdata_descriptoridlist"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSimpleSettingCollectionDefinition",
+      "accessTypes": "add,delete,get,replace",
+      "keywords": [
+        "Addresses",
+        "Firewall"
+      ],
+      "infoUrls": [
+        "https://docs.microsoft.com/windows/client-management/mdm/Firewall-csp/"
+      ],
+      "baseUri": "./Vendor/MSFT/Firewall",
+      "offsetUri": "/MdmStore/DynamicKeywords/Addresses/{0}/Addresses",
+      "rootDefinitionId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}",
+      "categoryId": "4a5e4714-00ac-4793-b0cc-5049041b0ed7",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_addresses",
+      "description": "Consists of one or more comma-delimited tokens specifying the addresses covered by this keyword. This value should not be set if AutoResolve is true.\n                    Valid tokens include:\n                    A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask not a network prefix is specified, the subnet mask defaults to 255.255.255.255.\n                    A valid IPv6 address.\n                    An IPv4 address range in the format of \"start address - end address\" with no spaces included.\n                    An IPv6 address range in the format of \"start address - end address\" with no spaces included.",
+      "helpText": "",
+      "name": "Addresses",
+      "displayName": "Remote Address Ranges",
+      "version": "638569342246964627",
+      "maximumCount": 600,
+      "minimumCount": 0,
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,configManager,microsoftSense",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.19042.1706",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 1
+      },
+      "referredSettingInformationList": [],
+      "valueDefinition": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition",
+        "format": "regEx",
+        "inputValidationSchema": "^(0[0-7]{10,11}|0(x|X)[0-9a-fA-F]{8}|(\\b4\\d{8}[0-5]\\b|\\b[1-3]?\\d{8}\\d?\\b)|((2(([0-4]\\d)|(5[0-5]))|1\\d{2}|\\d\\d?)|(0(x|X)[0-9a-fA-F]{2})|(0[0-7]{3}))(\\.((2(([0-4]\\d)|(5[0-5]))|1\\d{2}|\\d\\d?)|(0(x|X)[0-9a-fA-F]{2})|(0[0-7]{3}))){3})(/0*(\\d{1}|(?:[0-2]\\d|3[0-2])))?$|^(0[0-7]{10,11}|0(x|X)[0-9a-fA-F]{8}|(\\b4\\d{8}[0-5]\\b|\\b[1-3]?\\d{8}\\d?\\b)|((2(([0-4]\\d)|(5[0-5]))|1\\d{2}|\\d\\d?)|(0(x|X)[0-9a-fA-F]{2})|(0[0-7]{3}))(\\.((2(([0-4]\\d)|(5[0-5]))|1\\d{2}|\\d\\d?)|(0(x|X)[0-9a-fA-F]{2})|(0[0-7]{3}))){3})(\\/(((25[0-5]?)|(2[0-4]\\d?)|(1\\d\\d?)|\\d{1,2})\\.){3}((25[0-5]?)|(2[0-4]\\d?)|(1\\d?)|\\d{1,2}))?$|^(((25[0-5]?)|(2[0-4][0-9]?)|(1[0-9]{2})|[0-9]{1,2})(\\.((25[0-5]?)|(2[0-4][0-9]?)|(1[0-9]{2})|[0-9]{1,2})){3})-(((25[0-5]?)|(2[0-4][0-9]?)|(1[0-9]{2})|[0-9]{1,2})(\\.((25[0-5]?)|(2[0-4][0-9]?)|(1[0-9]{2})|[0-9]{1,2})){3})$|^((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))(/0*(\\d{1,2}|1(?:[0-1]\\d|2[0-8])))?$|^\\[((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))\\](/0*(\\d{1,2}|1(?:[0-1]\\d|2[0-8])))?$|^(((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))|(\\[((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))\\]))-(((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))|(\\[((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))\\]))$",
+        "maximumLength": 87516,
+        "minimumLength": 0,
+        "isSecret": false,
+        "fileTypes": []
+      },
+      "defaultValue": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationStringSettingValue",
+        "settingValueTemplateReference": null,
+        "value": null
+      },
+      "dependentOn": [
+        {
+          "dependentOn": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_autoresolve_false",
+          "parentSettingId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_autoresolve"
+        }
+      ],
+      "dependedOnBy": []
+    },
+    {
+      "@odata.type": "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionDefinition",
+      "accessTypes": "add,delete,get",
+      "keywords": [
+        " Id",
+        "Firewall"
+      ],
+      "infoUrls": [],
+      "baseUri": "./Vendor/MSFT/Firewall",
+      "offsetUri": "/MdmStore/DynamicKeywords/Addresses/{0}",
+      "rootDefinitionId": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}",
+      "categoryId": "4a5e4714-00ac-4793-b0cc-5049041b0ed7",
+      "settingUsage": "reusableSetting",
+      "uxBehavior": "default",
+      "visibility": "settingsCatalog,template",
+      "id": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}",
+      "description": "A unique GUID string identifier for this dynamic keyword address.",
+      "helpText": "",
+      "name": "{Id}",
+      "displayName": " Id",
+      "version": "638569342246964627",
+      "childIds": [
+        "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_id",
+        "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_keyword",
+        "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_addresses",
+        "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_autoresolve"
+      ],
+      "maximumCount": 100,
+      "minimumCount": 0,
+      "applicability": {
+        "@odata.type": "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability",
+        "description": null,
+        "platform": "windows10",
+        "deviceMode": "none",
+        "technologies": "mdm,configManager,microsoftSense",
+        "configurationServiceProviderVersion": "1.0",
+        "maximumSupportedVersion": null,
+        "minimumSupportedVersion": "10.0.19042.1706",
+        "windowsSkus": [
+          "windowsEnterprise",
+          "windowsProfessional",
+          "windowsEducation",
+          "holographicForBusiness",
+          "windowsMultiSession",
+          "iotEnterprise",
+          "windowsCloudN",
+          "windows11SE",
+          "iotEnterpriseSEval"
+        ],
+        "requiresAzureAd": false,
+        "requiredAzureAdTrustType": "none"
+      },
+      "occurrence": {
+        "minDeviceOccurrence": 0,
+        "maxDeviceOccurrence": 100
+      },
+      "referredSettingInformationList": [],
+      "dependentOn": [],
+      "dependedOnBy": [
+        {
+          "dependedOnBy": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_id",
+          "required": false
+        },
+        {
+          "dependedOnBy": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_keyword",
+          "required": true
+        },
+        {
+          "dependedOnBy": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_addresses",
+          "required": false
+        },
+        {
+          "dependedOnBy": "vendor_msft_firewall_mdmstore_dynamickeywords_addresses_{id}_autoresolve",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
