@@ -28,6 +28,9 @@ jobs:
         id: install
         run: npm ci
 
+      - name: Run offline compatibility tests
+        run: npm test
+
       - name: Run NodeAction
         id: run
         run: node . --op test 

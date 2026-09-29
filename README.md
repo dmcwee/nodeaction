@@ -4,7 +4,7 @@ This project provides a way to interact with the Device Configuration v2 endpoin
 
 ## Prerequisites 
 
-* NodeJS
+* Node.js 20 or newer (required by MSAL Node 5); a supported LTS release is recommended.
 * Microsoft M365 Tenant with license for Device Control (Intune or MDE)
 * Ability to register and application in Entra ID
 
@@ -21,6 +21,17 @@ This project provides a way to interact with the Device Configuration v2 endpoin
   1. Run `npm ci`
 
 > [Entra Application Registration Instrution](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret)
+
+### Dependency compatibility
+
+MSAL Node 5.1.5 removes the vulnerable `uuid` dependency; Axios 1.18.0 and the
+updated lockfile include security fixes for the HTTP dependency chain. The
+client-secret authentication configuration and import/export commands are
+unchanged. MSAL 5 uses Node's native fetch implementation for authentication.
+
+Run `npm test` for offline authentication and HTTP compatibility tests, and
+`npm audit` to check installed dependencies. The offline tests use synthetic
+credentials and a local HTTP server; they do not access a Microsoft 365 tenant.
 
 ## Run
 
